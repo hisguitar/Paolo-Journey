@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CalculationGame.unity
     guid: c842dce79a60e404396b1996d802e455
+  - enabled: 1
+    path: Assets/Scenes/IQTest/IQTestMenu.unity
+    guid: 96b24e919e98cbe4387a62dcf486cf3d
+  - enabled: 1
+    path: Assets/Scenes/IQTest/2-6.unity
+    guid: 79c016bf4ee669d449137a35bfc534ef
+  - enabled: 1
+    path: Assets/Scenes/IQTest/7-16.unity
+    guid: 9a1c43045ed40c243a11eca436f13c04
+  - enabled: 1
+    path: Assets/Scenes/IQTest/17+.unity
+    guid: 1f15914f60f82ed48a5074e203176e4a
   m_configObjects: {}
