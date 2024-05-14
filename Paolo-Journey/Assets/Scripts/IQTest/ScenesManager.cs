@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class ScenesManager : MonoBehaviour
 {
     public void Button2_6()
@@ -21,6 +22,12 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene("IQTestMenu");
     }
+    
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    
 }
 
 
