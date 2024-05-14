@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameplayManager.unity
     guid: e94e37814ab57664b9e56cdaa643f433
   - enabled: 1
-    path: Assets/Scenes/CalculationGame.unity
+    path: Assets/Scenes/Media1.unity
     guid: c842dce79a60e404396b1996d802e455
   - enabled: 1
     path: Assets/Scenes/IQTest/IQTestMenu.unity
@@ -29,4 +29,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IQTest/Result2-6.unity
     guid: dfa7dedc8f3ed4a4cab5a6e3055b000a
+  - enabled: 1
+    path: Assets/Scenes/ChooseTheCorrectWord.unity
+    guid: 1ff722d799d354d4889fb3015aca6a3a
+  - enabled: 1
+    path: Assets/Scenes/Game1.unity
+    guid: 2b8737b5a7fa718459f55625976b61b5
+  - enabled: 1
+    path: Assets/Scenes/Game2.unity
+    guid: 3539158e9915b6e4b8f42eae64e73b3c
+  - enabled: 1
+    path: Assets/Scenes/Game3.unity
+    guid: 8ab0715c324b4dc449259dd71d77a15a
+  - enabled: 1
+    path: Assets/Scenes/Media2.unity
+    guid: c4e82ab9b6afc624bb299fa4fcf4eff2
+  - enabled: 1
+    path: Assets/Scenes/Media3.unity
+    guid: ddb352b604c87cd4d957847c27744196
   m_configObjects: {}

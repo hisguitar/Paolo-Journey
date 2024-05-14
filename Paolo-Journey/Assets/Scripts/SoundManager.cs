@@ -11,15 +11,27 @@ public class SoundManager : MonoBehaviour
     public enum SoundName
     {
         ThemeSong,
+        ClickButton1,
+        ClickButton2
     }
 
     private void Awake()
     {
-        if (instance == null)
+        /*if (instance == null)
         { instance = this; }
         else
         {
             Destroy(this);
+        }*/
+        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // ทำให้วัตถุนี้ไม่ถูกทำลายเมื่อโหลด Scene ใหม่
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
         }
     }
 
