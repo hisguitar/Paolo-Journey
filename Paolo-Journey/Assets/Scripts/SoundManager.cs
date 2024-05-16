@@ -14,6 +14,8 @@ public class SoundManager : MonoBehaviour
         Click,
         Correct,
         Wrong,
+        ClickButton1,
+        ClickButton2,
     }
 
     private void Awake()

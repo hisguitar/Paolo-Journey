@@ -98,7 +98,6 @@ public class CanvasManager : MonoBehaviour
         SwitchCanvas((currentCanvasIndex + 1) % canvases.Count);
         ChangeInteracButton(currentCanvasIndex-1);
         SoundManager.instance.Play(SoundManager.SoundName.ClickButton2);
-
     }
 
     public void Previous()
@@ -145,7 +144,7 @@ public class CanvasManager : MonoBehaviour
                 // หาหน้าที่ผู้ใช้ยังไม่ได้ตอบคำถาม
                 int nextUnansweredIndex = Array.IndexOf(answered, false);
                 // นำผู้ใช้ไปยังหน้าที่ยังไม่ได้ตอบคำถาม
-                ChagePageButton(nextUnansweredIndex + 1);
+                ChangePageButton(nextUnansweredIndex + 1);
                 Debug.Log("nextUnansweredIndex: " + nextUnansweredIndex);
                 
             }
@@ -178,7 +177,7 @@ public class CanvasManager : MonoBehaviour
         button.colors = colorBlock;
     }
 
-    public void ChagePageButton(int index)
+    public void ChangePageButton(int index)
     { 
         SwitchCanvas(index);
         ChangeInteracButton(currentCanvasIndex);
