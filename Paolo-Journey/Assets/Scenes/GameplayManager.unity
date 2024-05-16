@@ -280,7 +280,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1ac95f945ca624081bb1fdefa1fc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - soundName: 0
+    clip: {fileID: 0}
+    loop: 0
+    volume: 0
+    audioSource: {fileID: 0}
+  - soundName: 1
+    clip: {fileID: 0}
+    loop: 0
+    volume: 0
+    audioSource: {fileID: 0}
+  - soundName: 2
+    clip: {fileID: 0}
+    loop: 0
+    volume: 0
+    audioSource: {fileID: 0}
+  - soundName: 3
+    clip: {fileID: 0}
+    loop: 0
+    volume: 0
+    audioSource: {fileID: 0}
 --- !u!4 &1719352790
 Transform:
   m_ObjectHideFlags: 0
