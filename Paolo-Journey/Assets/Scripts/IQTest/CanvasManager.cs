@@ -144,7 +144,7 @@ public class CanvasManager : MonoBehaviour
                 // หาหน้าที่ผู้ใช้ยังไม่ได้ตอบคำถาม
                 int nextUnansweredIndex = Array.IndexOf(answered, false);
                 // นำผู้ใช้ไปยังหน้าที่ยังไม่ได้ตอบคำถาม
-                ChagePageButton(nextUnansweredIndex + 1);
+                ChangePageButton(nextUnansweredIndex + 1);
                 //Debug.Log("nextUnansweredIndex: " + nextUnansweredIndex);
                 
             }

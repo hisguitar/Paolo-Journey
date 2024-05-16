@@ -282,9 +282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - soundName: 0
-    clip: {fileID: 0}
-    loop: 0
-    volume: 0
+    clip: {fileID: 8300000, guid: be30eef2d8e866d4299486d9f2759630, type: 3}
+    loop: 1
+    volume: 0.05
     audioSource: {fileID: 0}
   - soundName: 1
     clip: {fileID: 0}
