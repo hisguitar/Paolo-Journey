@@ -51549,6 +51549,8 @@ MonoBehaviour:
   - {fileID: 975131114}
   - {fileID: 116388243}
   - {fileID: 2071752951}
+  ageSlider: {fileID: 0}
+  ageSliderText: {fileID: 0}
   sendAnsButtons: {fileID: 453480529}
   timerText: {fileID: 623481911}
   TimerCanvas: {fileID: 1074680164}
