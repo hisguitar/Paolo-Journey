@@ -8,9 +8,44 @@ public class Result : MonoBehaviour
 {
     public TextMeshProUGUI IQResult;
     public float iq;
+    
     void Start()
     {
-        //int age = CanvasManager.age;
+        int age = CanvasManager.age;
+        int countScore = CanvasManager.countScore;
+        Debug.Log( "age: " + age);
+        Debug.Log("Score: " + countScore);
+
+        if (age <= 15 || (age >= 61 && age <= 70))
+        {
+            iq = Mathf.RoundToInt(countScore * 8.5f);
+        }
+        else if ((age >= 16 && age <= 20) || (age >= 51 && age <= 60))
+        {
+            iq = Mathf.RoundToInt(countScore * 6.5f);
+        }
+        else if (age >= 21 && age <= 50)
+        {
+            iq = Mathf.RoundToInt(countScore * 5.8f);
+        }
+
+        if (iq >= 81 && iq <= 129)
+        {
+            IQResult.text = string.Format("{0}", iq);
+        }
+        else if (iq <= 80)
+        {
+            IQResult.text = string.Format("คุณมี IQ น้อยกว่า 80");
+        }
+        else if (iq >= 130)
+        {
+            IQResult.text = string.Format("คุณมี IQ มากกว่า 130");
+        }
+        
+    }
+    
+    /*void Start()
+    {
         int age = CanvasManager.age;
         Debug.Log( "age: " + age);
         
@@ -21,7 +56,6 @@ public class Result : MonoBehaviour
         //iq = (countScore * 10.5f) / age;
         iq = Mathf.RoundToInt((countScore * 10.5f) / age);
         IQResult.text = string.Format("{0}", iq);
-
-
-    }
+    }*/
+    
 }
