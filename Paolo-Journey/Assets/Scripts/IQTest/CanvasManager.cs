@@ -25,7 +25,7 @@ public class CanvasManager : MonoBehaviour
     public int[] score;
     public bool[] answered;
     private int currentCanvasIndex = 0; 
-    private float timeCount = 0.0f;
+    public static float timeCount = 0.0f;
 
     void Start()
     {

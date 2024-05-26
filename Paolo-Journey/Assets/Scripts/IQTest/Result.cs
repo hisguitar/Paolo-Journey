@@ -13,8 +13,12 @@ public class Result : MonoBehaviour
     {
         int age = CanvasManager.age;
         int countScore = CanvasManager.countScore;
+        float time = CanvasManager.timeCount;
+        
         Debug.Log( "age: " + age);
         Debug.Log("Score: " + countScore);
+        Debug.Log("Time: " + time);
+
 
         if (age <= 15 || (age >= 61 && age <= 70))
         {
@@ -29,7 +33,7 @@ public class Result : MonoBehaviour
             iq = Mathf.RoundToInt(countScore * 5.8f);
         }
 
-        if (iq >= 81 && iq <= 129)
+        if (iq >= 81 && iq <= 144)
         {
             IQResult.text = string.Format("{0}", iq);
         }
@@ -37,9 +41,9 @@ public class Result : MonoBehaviour
         {
             IQResult.text = string.Format("คุณมี IQ น้อยกว่า 80");
         }
-        else if (iq >= 130)
+        else if (iq >= 145)
         {
-            IQResult.text = string.Format("คุณมี IQ มากกว่า 130");
+            IQResult.text = string.Format("คุณมี IQ มากกว่า 145");
         }
         
     }
