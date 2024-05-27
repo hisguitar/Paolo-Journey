@@ -51,7 +51,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Bulid/Paolo-Journey.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Bulid\Paolo-Journey.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\GitHub\Paolo-Journey\Paolo-Journey\Bulid" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -116,7 +116,8 @@
       <workItem from="1716630395054" duration="3000" />
       <workItem from="1716631354520" duration="11000" />
       <workItem from="1716705226557" duration="4382000" />
-      <workItem from="1716714690255" duration="637000" />
+      <workItem from="1716714690255" duration="1262000" />
+      <workItem from="1716775427629" duration="599000" />
     </task>
     <servers />
   </component>

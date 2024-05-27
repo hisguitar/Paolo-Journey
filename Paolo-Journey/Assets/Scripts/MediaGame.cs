@@ -9,6 +9,8 @@ public class MediaGame : MonoBehaviour
     public GameObject answer1;
     public GameObject answer2;
     public GameObject answer3;
+    [SerializeField] private GameObject wrong2;
+    [SerializeField] private GameObject wrong3;
 
     #region Correct & Wrong answer button
     public void CorrectAnswer()
@@ -22,10 +24,18 @@ public class MediaGame : MonoBehaviour
         answer3.SetActive(false);
     }
 
-    public void WrongAnswer()
+    public void WrongAnswer(int Button)
     {
         // Play Sound
         SoundManager.instance.Play(SoundManager.SoundName.Wrong);
+        if (Button == 2)
+        {
+            wrong2.SetActive(true);
+        }
+        else if(Button == 3)
+        {
+            wrong3.SetActive(true);
+        }
     }
     #endregion
 }
