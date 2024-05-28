@@ -20,14 +20,14 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        /*if (instance == null)
+        if (instance == null)
         { instance = this; }
         else
         {
             Destroy(this);
-        }*/
+        }
 
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     // For setting sound
