@@ -1,10 +1,8 @@
 using System;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : Singleton<SoundManager>
 {
-    public static SoundManager instance;
-
     [SerializeField] private Sound[] sounds;
 
     // List of sounds
@@ -16,26 +14,6 @@ public class SoundManager : MonoBehaviour
         Wrong,
         ClickButton1,
         ClickButton2,
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        { instance = this; }
-        else
-        {
-            Destroy(this);
-        }
-
-        /*if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }*/
     }
 
     // For setting sound

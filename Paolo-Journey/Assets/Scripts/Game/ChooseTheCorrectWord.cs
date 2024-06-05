@@ -24,7 +24,7 @@ public class ChooseTheCorrectWord : MonoBehaviour
     public void CorrectAnswer()
     {
         // Play Sound
-        SoundManager.instance.Play(SoundManager.SoundName.Correct);
+        SoundManager.Instance.Play(SoundManager.SoundName.Correct);
 
         // Update score
         score += 100;
@@ -36,7 +36,7 @@ public class ChooseTheCorrectWord : MonoBehaviour
     public void WrongAnswer()
     {
         // Play Sound
-        SoundManager.instance.Play(SoundManager.SoundName.Wrong);
+        SoundManager.Instance.Play(SoundManager.SoundName.Wrong);
 
         Debug.Log("Wrong Answer");
         checkAnswerText.text = "You answered wrong. Try choosing another option.";

@@ -6,35 +6,37 @@ public class ScenesManager : MonoBehaviour
     public void Button2_6()
     {
         SceneManager.LoadScene("2-6");
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
 
     public void Button7_16()
     {
         SceneManager.LoadScene("7-16");
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
 
     public void Button17()
     {
         SceneManager.LoadScene("17+");
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
 
     public void IQTestMenu()
     {
+        CSVWriter.Instance.IncrementInterestIQTest(CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
+
         SceneManager.LoadScene("IQTestMenu");
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
     
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
     

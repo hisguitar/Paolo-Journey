@@ -98,7 +98,7 @@ public class CanvasManager : MonoBehaviour
     {
         SwitchCanvas((currentCanvasIndex + 1) % canvases.Count);
         ChangeInteracButton(currentCanvasIndex-1);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton2);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
     }
 
     public void Previous()
@@ -112,7 +112,7 @@ public class CanvasManager : MonoBehaviour
 
         SwitchCanvas(currentCanvasIndex);
         ChangeInteracButton(currentCanvasIndex-1);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton2);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
         
     }
 
@@ -168,7 +168,7 @@ public class CanvasManager : MonoBehaviour
     public void OnAnswerClick(int pageIndex)
     {
         SetButtonColor(pageButtons[pageIndex], Color.gray);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
     }
 
     void SetButtonColor(Button button, Color color)
@@ -182,7 +182,7 @@ public class CanvasManager : MonoBehaviour
     { 
         SwitchCanvas(index);
         ChangeInteracButton(currentCanvasIndex);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton2);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
     }
     
     public void AgeButton(int index)
@@ -210,7 +210,7 @@ public class CanvasManager : MonoBehaviour
                 }
             }
         }
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
     }
 
     public void ChangeInteracButton(int pageIndex)
@@ -232,6 +232,6 @@ public class CanvasManager : MonoBehaviour
     {
         SwitchCanvas(canvases.Count-1); // เปลี่ยน currentCanvasIndex เป็นดัชนีของ Canvas หน้าสุดท้าย
         countScore = score.Count(s => s == 1);
-        SoundManager.instance.Play(SoundManager.SoundName.ClickButton1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
     }
 }

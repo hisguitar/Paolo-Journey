@@ -16,7 +16,7 @@ public class MediaGame : MonoBehaviour
     public void CorrectAnswer()
     {
         // Play Sound
-        SoundManager.instance.Play(SoundManager.SoundName.Correct);
+        SoundManager.Instance.Play(SoundManager.SoundName.Correct);
 
         correctImage.SetActive(true);
         answer1.SetActive(false);
@@ -27,7 +27,7 @@ public class MediaGame : MonoBehaviour
     public void WrongAnswer(int Button)
     {
         // Play Sound
-        SoundManager.instance.Play(SoundManager.SoundName.Wrong);
+        SoundManager.Instance.Play(SoundManager.SoundName.Wrong);
         if (Button == 2)
         {
             wrong2.SetActive(true);

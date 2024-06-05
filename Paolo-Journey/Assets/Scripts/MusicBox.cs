@@ -20,7 +20,7 @@ public class MusicBox : MonoBehaviour
         {
             // Start new music
             case MusicName.ThemeSong:
-                SoundManager.instance.Play(SoundManager.SoundName.ThemeSong);
+                SoundManager.Instance.Play(SoundManager.SoundName.ThemeSong);
                 break;
         }
     }
