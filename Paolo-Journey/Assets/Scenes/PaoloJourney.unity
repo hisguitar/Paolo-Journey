@@ -727,7 +727,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ButtonMedia1
+        m_MethodName: To_Media1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1502,7 +1502,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ButtonChooseTheCorrectWord
+        m_MethodName: To_ChooseTheCorrectWord
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1734,7 +1734,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ButtonMedia3
+        m_MethodName: To_Media3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2946,7 +2946,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ButtonIQTestMenu
+        m_MethodName: To_IQTestMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3103,7 +3103,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ButtonMedia2
+        m_MethodName: To_Media2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
