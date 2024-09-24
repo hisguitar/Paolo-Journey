@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 
 /// <summary>
+/// In OnGUI(), button will appear in "PaoloJourney" scene only
 /// Manages CSV file operations including creating, updating, and writing statistical data.
 /// </summary>
 public class CSVWriter : SingletonPersistent<CSVWriter>
@@ -76,26 +77,26 @@ public class CSVWriter : SingletonPersistent<CSVWriter>
 	}
 	
 	private void OnGUI()
-    {
-        if (SceneManager.GetActiveScene().name == "PaoloJourney")
-        {
-            GUIStyle buttonStyle = GUI.skin.button;
-            buttonStyle.fontSize = 18;
+	{
+		if (SceneManager.GetActiveScene().name == "PaoloJourney")
+		{
+			GUIStyle buttonStyle = GUI.skin.button;
+			buttonStyle.fontSize = 18;
 
-            // Create button for 'Export to Excel'
-            if (GUI.Button(new Rect(10, 10, 140, 30), "Export to Excel", buttonStyle))
-            {
-                dailyDataList.WriteCSV(filename); // Write CSV with current data
-            }
+			// Create button for 'Export to Excel'
+			if (GUI.Button(new Rect(10, 10, 140, 30), "Export to Excel", buttonStyle))
+			{
+				dailyDataList.WriteCSV(filename); // Write CSV with current data
+			}
 
-            // Create button for 'New Date Statistical Data'
-            if (GUI.Button(new Rect(160, 10, 240, 30), "Create New Statistical Data", buttonStyle))
-            {
-                CreateNewStatisticalData();
-                dailyDataList.WriteCSV(filename); // Write new data to CSV
-            }
-        }
-    }
+			// Create button for 'New Date Statistical Data'
+			if (GUI.Button(new Rect(160, 10, 240, 30), "Create New Statistical Data", buttonStyle))
+			{
+				CreateNewStatisticalData();
+				dailyDataList.WriteCSV(filename); // Write new data to CSV
+			}
+		}
+	}
 	
 	private void InitializeData()
 	{
