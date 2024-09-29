@@ -12,6 +12,10 @@ public class Reward : MonoBehaviour
 			case TriggerName.isGame1Cleared:
 			triggerState.isGame1Cleared = true;
 			break;
+			
+			case TriggerName.isGame2Cleared:
+			triggerState.isGame2Cleared = true;
+			break;
 		}
 	}
 }

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public enum TriggerName
 {
 	isGame1Cleared,
+	isGame2Cleared,
 }
 
 public class TriggerMedia : MonoBehaviour
@@ -18,6 +19,13 @@ public class TriggerMedia : MonoBehaviour
 		{
 			case TriggerName.isGame1Cleared:
 			if (triggerState.isGame1Cleared)
+			{
+				gameObject.SetActive(false);
+			}
+			break;
+			
+			case TriggerName.isGame2Cleared:
+			if (triggerState.isGame2Cleared)
 			{
 				gameObject.SetActive(false);
 			}

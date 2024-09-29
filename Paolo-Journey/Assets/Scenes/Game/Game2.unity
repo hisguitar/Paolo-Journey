@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 187560163}
   - component: {fileID: 187560167}
   - component: {fileID: 187560168}
+  - component: {fileID: 187560169}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -339,6 +340,20 @@ MonoBehaviour:
   answer3: {fileID: 1178563139}
   wrong2: {fileID: 780588319}
   wrong3: {fileID: 1263007564}
+--- !u!114 &187560169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187560162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a3bb892e7beb54aadd2c0442e933a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerState: {fileID: 11400000, guid: b1f720ea84ca26e46a3b3ab775002d5d, type: 2}
+  triggerName: 1
 --- !u!1 &219830548
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +861,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 187560169}
+        m_TargetAssemblyTypeName: Reward, Assembly-CSharp
+        m_MethodName: DeactivateTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 187560167}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -855,7 +882,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PaoloJourney
+          m_StringArgument: NewPaoloJourney
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &760140933

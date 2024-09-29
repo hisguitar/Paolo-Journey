@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TriggerState
   m_EditorClassIdentifier: 
   isGame1Cleared: 0
+  isGame2Cleared: 0
