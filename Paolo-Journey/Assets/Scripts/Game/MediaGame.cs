@@ -15,9 +15,9 @@ public class MediaGame : MonoBehaviour
     #region Correct & Wrong answer button
     public void CorrectAnswer()
     {
+        MenuCanvas.isLevelComplete = true;
         // Play Sound
         SoundManager.Instance.Play(SoundManager.SoundName.Correct);
-
         correctImage.SetActive(true);
         answer1.SetActive(false);
         answer2.SetActive(false);

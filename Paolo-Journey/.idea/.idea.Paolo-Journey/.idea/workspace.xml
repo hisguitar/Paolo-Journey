@@ -17,6 +17,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IQTest/InteractableAnsButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IQTest/Result.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.11/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.9/Runtime/Utilities/ResourceReloader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity/Work/NBA2K2024/Assets/Scripts/Manager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity/Work/NBA2K2024/Assets/Scripts/Menu.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -119,6 +121,7 @@
       <workItem from="1716714690255" duration="1262000" />
       <workItem from="1716775427629" duration="2500000" />
       <workItem from="1716867138884" duration="597000" />
+      <workItem from="1727699280002" duration="2663000" />
     </task>
     <servers />
   </component>
