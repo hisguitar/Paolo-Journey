@@ -35,4 +35,11 @@ public class MenuCanvas : MonoBehaviour
         player.SetActive(true);
         menuCanvas.gameObject.SetActive(false);
     }
+    
+    public void PauseButton()
+    {
+        screenSpace_Canvas.gameObject.SetActive(false);
+        player.SetActive(false);
+        menuCanvas.gameObject.SetActive(true);
+    }
 }

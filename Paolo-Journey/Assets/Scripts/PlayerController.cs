@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     
     [Header("Other Variables (Animations, Projectile)")]
-    //[SerializeField] public Animator animator; // Put player animator to this
+    [SerializeField] public Animator animator; // Put player animator to this
 
     private Rigidbody2D _rb;
     private static readonly int Speed = Animator.StringToHash("Speed"); // Speed parameter in animator
@@ -37,14 +37,23 @@ public class PlayerController : MonoBehaviour
         // Store the value of the input in horizontal format in the movement variable
         float movement = Input.GetAxis("Horizontal");
         // Setting float to show walking animation
-        //animator.SetFloat(Speed, Mathf.Abs(movement));
+        animator.SetFloat(Speed, Mathf.Abs(movement));
         
         // Character walk
         transform.position += new Vector3(movement, 0, 0) * (Time.deltaTime * movementSpeed);
-        // Character Rotation
+        /*// Character Rotation
         if (!Mathf.Approximately(0, movement))
         {
             transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        }*/
+        // Character Rotation (localScale method to flip character)
+        if (movement > 0)
+        {
+            transform.localScale = new Vector3(4.5f, 4.5f, 1); // Face right
+        }
+        else if (movement < 0)
+        {
+            transform.localScale = new Vector3(-4.5f, 4.5f, 1); // Face left
         }
         // Character Jump
         if (Input.GetButton("Jump") && Mathf.Abs(_rb.velocity.y) < 0.001f)
