@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef98d2c663b165847a5ef80f43a3d69d
+guid: 7aafd4b8a266f204e80426fbc01b3a46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idel Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 16
+        width: 55
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ce159b5f6af346af37a6153456b45
+      internalID: -925820740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 16
+        width: 56
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d92f8ef0eed17439ed586425e2142e
+      internalID: -2140453417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 16
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab13f5ead8ba87b4d9d2506b0cfc349c
+      internalID: 1724041942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 16
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30699862946335a40998fc6229dafbe5
+      internalID: -1798850980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idel Animation-Sheet_0: -925820740
+      Idel Animation-Sheet_1: -2140453417
+      Idel Animation-Sheet_2: 1724041942
+      Idel Animation-Sheet_3: -1798850980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
