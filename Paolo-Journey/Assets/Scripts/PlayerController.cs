@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
 	
 	[Header("Other Variables (Animations, Projectile)")]
 	[SerializeField] public Animator animator; // Put player animator to this
+	
+	[Header("UI Elements")]
+	[SerializeField] private Image leftButton;
+	[SerializeField] private Image rightButton;
 
 	private Rigidbody2D _rb;
 	private Vector2 moveInput;
@@ -47,6 +51,33 @@ public class PlayerController : MonoBehaviour
 	private void OnMove(InputAction.CallbackContext context)
 	{
 		moveInput = context.ReadValue<Vector2>();
+		UpdateUI();
+	}
+	
+	private void UpdateUI()
+	{
+		if (moveInput.x > 0) // Move to left
+		{
+			SetImageAlpha(leftButton, 0.5f); // Set alpha to 50%
+			SetImageAlpha(rightButton, 1.0f); // Set alpha to 100%
+		}
+		else if (moveInput.x < 0) // Move to right
+		{
+			SetImageAlpha(leftButton, 1.0f); // Set alpha to 100%
+			SetImageAlpha(rightButton, 0.5f); // Set alpha to 50%
+		}
+		else // หยุด
+		{
+			SetImageAlpha(leftButton, 0.5f); // Set alpha to 50%
+			SetImageAlpha(rightButton, 0.5f); // Set alpha to 50%
+		}
+	}
+	
+	private void SetImageAlpha(Image image, float alpha)
+	{
+		Color color = image.color;
+		color.a = alpha;
+		image.color = color;
 	}
 	
 	private void FixedUpdate()
