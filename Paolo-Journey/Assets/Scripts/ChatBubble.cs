@@ -7,6 +7,7 @@ public class ChatBubble : MonoBehaviour
 	[SerializeField] private Image background;
 	[SerializeField] private TMP_Text messageText;
 	[SerializeField] private Vector2 bubbleSizeOffset = new(0.4f, 0.2f);
+	[SerializeField] private GameObject noteButton;
 	
 	[SerializeField] [TextArea] private string[] messages;
 	private int currentMessageIndex = 0;
@@ -40,13 +41,19 @@ public class ChatBubble : MonoBehaviour
 	// Function for interaction
 	public void ChangeText()
 	{
-		if (messages.Length == 0) return;
-		
-		// Show message
-		messageText.text = messages[currentMessageIndex];
+		if (messages.Length == 0 || currentMessageIndex == messages.Length - 1) return;
 		
 		// Change to next message
 		currentMessageIndex = (currentMessageIndex + 1) % messages.Length;
+		
+		// Show message
+		messageText.text = messages[currentMessageIndex];
 		UpdateBackgroundSize();
+		
+		// Show note button
+		if (currentMessageIndex == messages.Length - 1)
+		{
+			noteButton.SetActive(true);
+		}
 	}
 }
