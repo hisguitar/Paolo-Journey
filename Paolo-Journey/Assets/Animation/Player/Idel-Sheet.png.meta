@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6761d2221ae09194ab6f986ce61f0d7a
+guid: 2974fe14788a93040bd16a14e7173661
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,24 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boywalk1-Sheet_0
+      name: Idel-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1e1b85853aea0b4193a5277634827b5
-      internalID: 1318839218
+      spriteID: d7f12cf7685a2204d89fcff7bc11f92a
+      internalID: 1125186701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boywalk1-Sheet_1
+      name: Idel-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 175c2e07e1fe7d44894773ea60a7da10
-      internalID: -189511467
+      spriteID: 550e154211dbd6d4d80393e06b48e7a9
+      internalID: -833433889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boywalk1-Sheet_2
+      name: Idel-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -179,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2deb5d02ae28344d8bde0ad9b752485
-      internalID: 1323071120
+      spriteID: 42dad558730004947a6e39749f56bbbd
+      internalID: 307373017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boywalk1-Sheet_3
+      name: Idel-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -200,50 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b7c8202a87285a49a70cb7e7d5fa8c4
-      internalID: 636339080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boywalk1-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f7b108fdc459e94a9b1175787750a36
-      internalID: -156130629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boywalk1-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c39077eac1d193647a575b2e88061c9c
-      internalID: -308957693
+      spriteID: ad9a103174c53de43b3aa514ad607dbc
+      internalID: 353649184
       vertices: []
       indices: 
       edges: []
@@ -259,12 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boywalk1-Sheet_0: 1318839218
-      Boywalk1-Sheet_1: -189511467
-      Boywalk1-Sheet_2: 1323071120
-      Boywalk1-Sheet_3: 636339080
-      Boywalk1-Sheet_4: -156130629
-      Boywalk1-Sheet_5: -308957693
+      Idel-Sheet_0: 1125186701
+      Idel-Sheet_1: -833433889
+      Idel-Sheet_2: 307373017
+      Idel-Sheet_3: 353649184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
