@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 111838555}
   - component: {fileID: 111838557}
   - component: {fileID: 111838556}
+  - component: {fileID: 111838558}
   m_Layer: 5
   m_Name: NotePanel
   m_TagString: Untagged
@@ -321,6 +322,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111838554}
   m_CullTransparentMesh: 1
+--- !u!95 &111838558
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111838554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 187ec4e6b93f7074fae3c668bd6d53f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &126703834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,7 +2262,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 175, y: 175}
+  m_SizeDelta: {x: 365, y: 310}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &1011407810
 CanvasRenderer:
@@ -2531,6 +2553,7 @@ GameObject:
   - component: {fileID: 1288409735}
   - component: {fileID: 1288409734}
   - component: {fileID: 1288409736}
+  - component: {fileID: 1288409737}
   m_Layer: 5
   m_Name: ChatBox
   m_TagString: Untagged
@@ -2556,7 +2579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: 360}
   m_SizeDelta: {x: 1030, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1288409734
@@ -2626,6 +2649,27 @@ MonoBehaviour:
     \u0E43\u0E0A\u0E49\u0E2A\u0E1A\u0E39\u0E48\u0E17\u0E38\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07\u0E25\u0E49\u0E32\u0E07\u0E43\u0E2B\u0E49\u0E17\u0E38\u0E01\u0E21\u0E38\u0E21\u0E19\u0E34\u0E49\u0E27!"
   - "\u0E1F\u0E35\u0E21\u0E48\u0E2D\u0E19\u0E08\u0E14\u0E42\u0E19\u0E49\u0E15\u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E44\u0E27\u0E49\u0E43\u0E2B\u0E49\u0E41\u0E25\u0E49\u0E27\u0E19\u0E30
     \u0E40\u0E14\u0E34\u0E19\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E17\u0E35\u0E48\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E44\u0E14\u0E49\u0E40\u0E25\u0E22!"
+--- !u!95 &1288409737
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288409732}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee6bc95fe64484d40a4cddae8d7ac3a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1314583759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,6 +5033,7 @@ GameObject:
   - component: {fileID: 1999023902}
   - component: {fileID: 1999023901}
   - component: {fileID: 1999023903}
+  - component: {fileID: 1999023904}
   m_Layer: 5
   m_Name: InteractionButton
   m_TagString: Untagged
@@ -5010,11 +5055,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1011407809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 64}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 175, y: 175}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999023901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,6 +5154,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1999023904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999023898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bb9bee8a1010d46b15c45bbbf7345c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetImage: {fileID: 1999023901}
+  pulseSpeed: 1
+  minScale: 0.95
+  maxScale: 1.05
 --- !u!1 &2023203060
 GameObject:
   m_ObjectHideFlags: 0
