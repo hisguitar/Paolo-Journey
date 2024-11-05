@@ -4,14 +4,14 @@ using UnityEngine;
 public class PhymonGuideTrigger : MonoBehaviour
 {
 	[Header("Chat Bubble")]
-	[SerializeField] private GameObject chatBubble;
+	[SerializeField] private GameObject chatBox;
 	[SerializeField] private GameObject interactButton;
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player"))
 		{
-			chatBubble.SetActive(true);
+			chatBox.SetActive(true);
 			interactButton.SetActive(true);
 		}
 	}
@@ -20,7 +20,7 @@ public class PhymonGuideTrigger : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			chatBubble.SetActive(false);
+			chatBox.SetActive(false);
 			interactButton.SetActive(false);
 		}
 	}
