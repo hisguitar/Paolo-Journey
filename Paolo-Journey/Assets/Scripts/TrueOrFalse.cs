@@ -29,6 +29,7 @@ public class TrueOrFalse : MonoBehaviour
 	[SerializeField] private int score = 0;
 	[SerializeField] private int currentQuestion = 0;
 	[SerializeField] private string sceneName;
+	private bool isEnd = false;
 	//private Vector3 choiceOnePosition;
 	//private Vector3 choiceTwoPosition;
 	
@@ -64,6 +65,7 @@ public class TrueOrFalse : MonoBehaviour
 		if (currentQuestion >= questionImage.Length) return;
 		if (isTrue && isShouldEat[currentQuestion] || !isTrue && !isShouldEat[currentQuestion])
 		{	
+			SoundManager.Instance.Play(SoundManager.SoundName.Correct);
 			score += 10;
 			correctAnswer.image.color = new Color32(113, 169, 0, 210);
 			correctAnswerText.color = new Color32(171, 255, 0, 255);
@@ -71,6 +73,7 @@ public class TrueOrFalse : MonoBehaviour
 		}
 		else
 		{
+			SoundManager.Instance.Play(SoundManager.SoundName.Wrong);
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
 			correctAnswerText.text = "Wrong Answer!\nno point";
@@ -96,10 +99,21 @@ public class TrueOrFalse : MonoBehaviour
 	
 	private void Hide()
 	{
-		if (currentQuestion >= questionImage.Length)
+		if (isEnd)
 		{
 			Debug.Log("Load next scene here!");
 			SceneManager.LoadScene(sceneName);
+		}
+		
+		if (currentQuestion >= questionImage.Length)
+		{
+			// Complete here!
+			Debug.Log("There is no more question.");
+			correctAnswer.image.color = new Color32(0, 163, 255, 210);
+			correctAnswerText.color = Color.white;
+			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
+			isEnd = true;
+			return;
 		}
 		else
 		{
@@ -123,16 +137,6 @@ public class TrueOrFalse : MonoBehaviour
 	// Used in ChangeQuestion()
 	private void SetImage()
 	{
-		if (currentQuestion >= questionImage.Length)
-		{
-			// Complete here!
-			Debug.Log("There is no more question.");
-			correctAnswer.image.color = new Color32(0, 163, 255, 210);
-			correctAnswerText.color = Color.white;
-			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
-			return;
-		}
-		
 		// Set image sprite to [currentProposition] number in array list
 		question.sprite = questionImage[currentQuestion];
 		//choiceOne.image.sprite = choiceOneImage[currentQuestion];
@@ -188,6 +192,7 @@ public class TrueOrFalse : MonoBehaviour
 	{
 		if (isOpen)
 		{
+			SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
 			foodDescriptionBackground.SetActive(true);
 			if (currentQuestion >= questionImage.Length) return;
 			foodDescriptionText.text = foodDescription[currentQuestion];
