@@ -11,6 +11,10 @@ public class TrueOrFalse : MonoBehaviour
 	[SerializeField] private Image question;
 	//[SerializeField] private Button choiceOne;
 	//[SerializeField] private Button choiceTwo;
+	[SerializeField] private TMP_Text imageNameText;
+	[SerializeField] private GameObject foodDescriptionBackground;
+	[SerializeField] private TMP_Text foodDescriptionText;
+	[TextArea] [SerializeField] private string[] foodDescription;
 	[Header("Result")]
 	[SerializeField] private Button correctAnswer;
 	[SerializeField] private Image correctAnswerBanner;
@@ -20,6 +24,7 @@ public class TrueOrFalse : MonoBehaviour
 	[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] questionImage;
 	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceOneImage;
 	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceTwoImage;
+	[SerializeField] private string[] imageName;
 	[SerializeField] private bool[] isShouldEat;
 	[SerializeField] private int score = 0;
 	[SerializeField] private int currentQuestion = 0;
@@ -91,8 +96,9 @@ public class TrueOrFalse : MonoBehaviour
 	
 	private void Hide()
 	{
-		if (currentQuestion > questionImage.Length)
+		if (currentQuestion >= questionImage.Length)
 		{
+			Debug.Log("Load next scene here!");
 			SceneManager.LoadScene(sceneName);
 		}
 		else
@@ -131,6 +137,7 @@ public class TrueOrFalse : MonoBehaviour
 		question.sprite = questionImage[currentQuestion];
 		//choiceOne.image.sprite = choiceOneImage[currentQuestion];
 		//choiceTwo.image.sprite = choiceTwoImage[currentQuestion];
+		imageNameText.text = imageName[currentQuestion];
 	}
 	
 	// Used in ChangeQuestion()
@@ -175,5 +182,19 @@ public class TrueOrFalse : MonoBehaviour
 		}
 
 		finishScoreText.rectTransform.localScale = new Vector3(startScale, startScale, 1f);
+	}
+	
+	public void OpenFoodDescription(bool isOpen)
+	{
+		if (isOpen)
+		{
+			foodDescriptionBackground.SetActive(true);
+			if (currentQuestion >= questionImage.Length) return;
+			foodDescriptionText.text = foodDescription[currentQuestion];
+		}
+		else
+		{
+			foodDescriptionBackground.SetActive(false);
+		}
 	}
 }
