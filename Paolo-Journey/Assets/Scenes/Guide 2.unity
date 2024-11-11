@@ -1264,7 +1264,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ffe503deecba51d49ab891350c6f443c, type: 3}
-  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5186,9 +5186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
-  Logging: 0
 --- !u!1 &1993925969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5473,6 +5470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aaf28091374ec42bf4f2d479604ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactButton: {fileID: 0}
   sceneName: PaoloJourney
 --- !u!61 &2023203064
 BoxCollider2D:
@@ -5870,6 +5868,18 @@ PrefabInstance:
     - target: {fileID: 1024227332682688923, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053607284096003234, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053607284096003234, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053607284096003234, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6078323409928472337, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
       propertyPath: m_BoundingShape2D

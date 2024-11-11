@@ -33,9 +33,9 @@ public class MiniGameManager : MonoBehaviour
             }),
             new QuestionStep("ขั้นตอนที่ 2: ห้ามเลือด", new List<Option>
             {
-                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด แต่ไม่เหมาะกับการห้ามเลือด เพราะมันซับเลือดได้ไม่ดี!", optionSprites[0]),
+                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด แต่ไม่เหมาะกับการห้ามเลือด เพราะมันซับเลือดได้ไม่ดี!", optionSprites[6]),
                 new Option("ผ้าก๊อซสะอาด", true, "นี่แหละ! ผ้าก๊อซสะอาด ใช้ห้ามเลือดได้ดีเลย แค่กดมันลงไปที่แผลก็ช่วยหยุดเลือดได้!", optionSprites[4]),
-                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาดเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด เพราะมันจะแสบและไม่ช่วยหยุดเลือดนะ!", optionSprites[0])
+                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาดเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด เพราะมันจะแสบและไม่ช่วยหยุดเลือดนะ!", optionSprites[5])
             }),
             new QuestionStep("ขั้นตอนที่ 3: ทายาใส่แผล", new List<Option>
             {
@@ -62,6 +62,7 @@ public class MiniGameManager : MonoBehaviour
         {
             optionButtons[i].GetComponent<Image>().sprite = step.Options[i].OptionSprite;  // ตั้งค่ารูปภาพของปุ่ม
             optionButtons[i].GetComponentInChildren<TMP_Text>().text = step.Options[i].Text;
+
             
             wrongText[i].gameObject.SetActive(false);
 
