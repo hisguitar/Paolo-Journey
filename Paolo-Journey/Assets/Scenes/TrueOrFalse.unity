@@ -243,21 +243,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 681802508}
-  choiceOne: {fileID: 1759655129}
-  choiceTwo: {fileID: 601712632}
   correctAnswer: {fileID: 46442639}
   correctAnswerBanner: {fileID: 1003778653}
   correctAnswerText: {fileID: 89393583}
   finishScoreText: {fileID: 2116712946}
   questionImage:
-  - {fileID: -27598305, guid: d1a5befd1d04c054b9b37e44ffc9656d, type: 3}
-  - {fileID: -1331714353, guid: 13c31d08437da094995e200ca09b7c48, type: 3}
-  choiceOneImage:
-  - {fileID: -1299253207, guid: 85fd3cf1da806624187597f7e7cbe844, type: 3}
-  - {fileID: -2111023915, guid: 7a77c4db07202b24eb4806943567b1b2, type: 3}
-  choiceTwoImage:
-  - {fileID: -1396514657, guid: f2ff4504e913aa9468f49009abd3c44f, type: 3}
-  - {fileID: -193273447, guid: 538cd79ce55d6d54a9af57d3363eb8e8, type: 3}
+  - {fileID: 1847463989, guid: a03c2610221b14940b818fb271b448fa, type: 3}
+  - {fileID: -1347541644, guid: a03c2610221b14940b818fb271b448fa, type: 3}
+  isShouldEat: 0100
   score: 0
   currentQuestion: 0
   sceneName: Guide
@@ -688,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -320}
+  m_AnchoredPosition: {x: 110, y: -320}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601712632
@@ -737,8 +730,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 18709551}
         m_TargetAssemblyTypeName: TrueOrFalse, Assembly-CSharp
-        m_MethodName: ChangeQuestion
-        m_Mode: 1
+        m_MethodName: TrueOrNot
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -749,8 +742,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 18709551}
         m_TargetAssemblyTypeName: TrueOrFalse, Assembly-CSharp
-        m_MethodName: TrueOrNot
-        m_Mode: 6
+        m_MethodName: ChangeQuestion
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -854,8 +847,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1847463989, guid: a03c2610221b14940b818fb271b448fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1051,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -320}
+  m_AnchoredPosition: {x: -110, y: -320}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759655129
@@ -1100,18 +1093,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 18709551}
         m_TargetAssemblyTypeName: TrueOrFalse, Assembly-CSharp
-        m_MethodName: ChangeQuestion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 18709551}
-        m_TargetAssemblyTypeName: TrueOrFalse, Assembly-CSharp
         m_MethodName: TrueOrNot
         m_Mode: 6
         m_Arguments:
@@ -1121,6 +1102,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 18709551}
+        m_TargetAssemblyTypeName: TrueOrFalse, Assembly-CSharp
+        m_MethodName: ChangeQuestion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1759655130
 MonoBehaviour:

@@ -9,8 +9,8 @@ public class TrueOrFalse : MonoBehaviour
 	// 1 proposition : 2 choices
 	[Header("Question Elements")]
 	[SerializeField] private Image question;
-	[SerializeField] private Button choiceOne;
-	[SerializeField] private Button choiceTwo;
+	//[SerializeField] private Button choiceOne;
+	//[SerializeField] private Button choiceTwo;
 	[Header("Result")]
 	[SerializeField] private Button correctAnswer;
 	[SerializeField] private Image correctAnswerBanner;
@@ -18,13 +18,14 @@ public class TrueOrFalse : MonoBehaviour
 	[SerializeField] private TMP_Text finishScoreText;
 	[Header("Image List")]
 	[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] questionImage;
-	[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceOneImage;
-	[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceTwoImage;
+	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceOneImage;
+	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceTwoImage;
+	[SerializeField] private bool[] isShouldEat;
 	[SerializeField] private int score = 0;
 	[SerializeField] private int currentQuestion = 0;
 	[SerializeField] private string sceneName;
-	private Vector3 choiceOnePosition;
-	private Vector3 choiceTwoPosition;
+	//private Vector3 choiceOnePosition;
+	//private Vector3 choiceTwoPosition;
 	
 	private void Start()
 	{
@@ -33,8 +34,8 @@ public class TrueOrFalse : MonoBehaviour
 		SetImage();
 		
 		// Save anchored position of button for random in future
-		choiceOnePosition = choiceOne.GetComponent<RectTransform>().anchoredPosition;
-		choiceTwoPosition = choiceTwo.GetComponent<RectTransform>().anchoredPosition;
+		//choiceOnePosition = choiceOne.GetComponent<RectTransform>().anchoredPosition;
+		//choiceTwoPosition = choiceTwo.GetComponent<RectTransform>().anchoredPosition;
 	}
 	
 	public void ChangeQuestion()
@@ -56,7 +57,7 @@ public class TrueOrFalse : MonoBehaviour
 		StartCoroutine(ExpandBannerHeight(0, 250, 0.4f));
 		
 		if (currentQuestion >= questionImage.Length) return;
-		if (isTrue)
+		if (isTrue && isShouldEat[currentQuestion])
 		{	
 			score += 10;
 			correctAnswer.image.color = new Color32(113, 169, 0, 210);
@@ -100,7 +101,7 @@ public class TrueOrFalse : MonoBehaviour
 		
 			// ChangeQuestion
 			SetImage();
-			RandomizeChoicesPosition();
+			//RandomizeChoicesPosition();
 		}
 	}
 	
@@ -128,26 +129,26 @@ public class TrueOrFalse : MonoBehaviour
 		
 		// Set image sprite to [currentProposition] number in array list
 		question.sprite = questionImage[currentQuestion];
-		choiceOne.image.sprite = choiceOneImage[currentQuestion];
-		choiceTwo.image.sprite = choiceTwoImage[currentQuestion];
+		//choiceOne.image.sprite = choiceOneImage[currentQuestion];
+		//choiceTwo.image.sprite = choiceTwoImage[currentQuestion];
 	}
 	
 	// Used in ChangeQuestion()
-	private void RandomizeChoicesPosition()
-	{
-		bool shouldSwap = Random.Range(0, 2) == 1; // 50% chances because it doesn't include the last number, which is 2.
+	// private void RandomizeChoicesPosition()
+	// {
+	// 	bool shouldSwap = Random.Range(0, 2) == 1; // 50% chances because it doesn't include the last number, which is 2.
 		
-		if (shouldSwap)
-		{
-			choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
-			choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
-		}
-		else
-		{
-			choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
-			choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
-		}
-	}
+	// 	if (shouldSwap)
+	// 	{
+	// 		choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
+	// 		choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
+	// 	}
+	// 	else
+	// 	{
+	// 		choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
+	// 		choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
+	// 	}
+	// }
 	#endregion
 	
 	private IEnumerator PopupText(float startScale, float endScale, float duration)
