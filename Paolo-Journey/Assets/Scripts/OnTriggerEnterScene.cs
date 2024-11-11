@@ -18,13 +18,18 @@ public class OnTriggerEnterScene : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			interactButton.SetActive(false);
+			if (interactButton != null)
+			{
+				interactButton.SetActive(false);
+			}
 		}
 	}
 	
 	public void ChangeScene()
 	{
-		SceneManager.LoadScene(sceneName);
+		interactButton.SetActive(false);
+		
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
+		SceneManager.LoadScene(sceneName);
 	}
 }
