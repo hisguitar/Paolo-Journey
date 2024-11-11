@@ -62,18 +62,18 @@ public class TrueOrFalse : MonoBehaviour
 		StartCoroutine(ExpandBannerHeight(0, 250, 0.4f));
 		
 		if (currentQuestion >= questionImage.Length) return;
-		if (isTrue && isShouldEat[currentQuestion])
+		if (isTrue && isShouldEat[currentQuestion] || !isTrue && !isShouldEat[currentQuestion])
 		{	
 			score += 10;
 			correctAnswer.image.color = new Color32(113, 169, 0, 210);
 			correctAnswerText.color = new Color32(171, 255, 0, 255);
-			correctAnswerText.text = "Correct Answer!";
+			correctAnswerText.text = "Correct Answer!\n+10 point";
 		}
 		else
 		{
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
-			correctAnswerText.text = "Wrong Answer!";
+			correctAnswerText.text = "Wrong Answer!\nno point";
 		}
 	}
 	
