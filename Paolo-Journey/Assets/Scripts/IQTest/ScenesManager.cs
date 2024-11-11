@@ -26,7 +26,7 @@ public class ScenesManager : MonoBehaviour
 
     public void IQTestMenu()
     {
-        CSVWriter.Instance.IncrementInterest("IQTest", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
+        //CSVWriter.Instance.IncrementInterest("IQTest", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
 
         SceneManager.LoadScene("IQTestMenu");
         SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
@@ -39,7 +39,6 @@ public class ScenesManager : MonoBehaviour
         SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
-    
 }
 
 
