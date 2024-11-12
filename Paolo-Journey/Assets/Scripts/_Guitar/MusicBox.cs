@@ -19,10 +19,10 @@ public class MusicBox : MonoBehaviour
 		{
 			// Start new music
 			case MusicName.ThemeSong:
-				SoundManager.Instance.Play(SoundManager.SoundName.ThemeSong);
+				GSoundManager.Instance.Play(GSoundManager.GSoundName.ThemeSong);
 				break;
 			case MusicName.TrueOrFalse:
-				SoundManager.Instance.Play(SoundManager.SoundName.TrueOrFalse);
+				GSoundManager.Instance.Play(GSoundManager.GSoundName.TrueOrFalse);
 				break;
 		}
 	}
