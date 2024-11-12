@@ -62,7 +62,6 @@ public class MiniGameManager : MonoBehaviour
         {
             optionButtons[i].GetComponent<Image>().sprite = step.Options[i].OptionSprite;  // ตั้งค่ารูปภาพของปุ่ม
             optionButtons[i].GetComponentInChildren<TMP_Text>().text = step.Options[i].Text;
-
             
             wrongText[i].gameObject.SetActive(false);
 
