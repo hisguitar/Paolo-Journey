@@ -555,7 +555,7 @@ MonoBehaviour:
   isShouldEat: 01010001000101010001
   score: 0
   currentQuestion: 0
-  sceneName: Guide
+  sceneName: PaoloJourney
 --- !u!1 &23709355
 GameObject:
   m_ObjectHideFlags: 0
