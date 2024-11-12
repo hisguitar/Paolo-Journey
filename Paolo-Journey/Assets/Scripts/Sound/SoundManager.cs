@@ -17,6 +17,7 @@ public class SoundManager : Singleton<SoundManager>
         if (instance != null)
         {
             Destroy(gameObject);
+            
         }
         else
         {
@@ -58,13 +59,6 @@ public class SoundManager : Singleton<SoundManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     
-    
-    
-    
-    
-    
-    
-    
     // List of sounds
     public enum SoundName
     {
@@ -74,6 +68,8 @@ public class SoundManager : Singleton<SoundManager>
         Wrong,
         ClickButton1,
         ClickButton2,
+        True,
+        False
     }
 
     // For setting sound

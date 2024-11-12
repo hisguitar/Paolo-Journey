@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -479767144307841536, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1719352789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719352788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb1ac95f945ca624081bb1fdefa1fc0f, type: 3}
   m_Name: 
@@ -286,6 +290,9 @@ MonoBehaviour:
     loop: 0
     volume: 0
     audioSource: {fileID: 0}
+  sfxGroup: {fileID: 0}
+  defaultMusic: {fileID: 0}
+  iqTestMusic: {fileID: 0}
 --- !u!4 &1719352790
 Transform:
   m_ObjectHideFlags: 0

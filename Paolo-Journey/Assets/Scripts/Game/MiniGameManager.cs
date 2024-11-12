@@ -5,6 +5,8 @@ using TMPro;
 
 public class MiniGameManager : MonoBehaviour
 {
+    public GameObject miniGame;
+    public GameObject correctImage;
     public TMP_Text questionText;
     public TMP_Text responseText;
     public Button[] optionButtons;
@@ -27,27 +29,27 @@ public class MiniGameManager : MonoBehaviour
         {
             new QuestionStep("ขั้นตอนที่ 1: ทำความสะอาดแผล", new List<Option>
             {
-                new Option("ผ้าก๊อซชุบน้ำยาฆ่าเชื้อ", true, "นี่คือผ้าก๊อซชุบน้ำยาฆ่าเชื้อ! เราใช้มันทำความสะอาดแผลให้สะอาด ป้องกันเชื้อโรคที่อาจจะเข้ามาในแผลได้", optionSprites[4]),
-                new Option("ผ้าพันแผล", false, "นี่คือผ้าพันแผล ใช้ตอนปิดแผล แต่ตอนนี้เรายังไม่ได้ปิดแผลนะ ต้องทำความสะอาดก่อน!", optionSprites[3]),
-                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยานี้ไว้ใช้ปิดแผลเล็กๆ เมื่อทำความสะอาดเสร็จแล้ว เราค่อยใช้มันปิดแผลนะ!", optionSprites[1])
+                new Option("ผ้าก๊อซชุบน้ำยาฆ่าเชื้อ", true, "นี่คือผ้าก๊อซชุบน้ำยาฆ่าเชื้อ!\nเราใช้มันทำความสะอาดแผลให้สะอาด ป้องกันเชื้อโรคที่อาจจะเข้ามาในแผลได้", optionSprites[4]),
+                new Option("ผ้าพันแผล", false, "นี่คือผ้าพันแผล ใช้ตอนปิดแผล\nแต่ตอนนี้เรายังไม่ได้ปิดแผลนะ ต้องทำความสะอาดก่อน!", optionSprites[3]),
+                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยานี้ไว้ใช้ปิดแผลเล็กๆ\nเมื่อทำความสะอาดเสร็จแล้ว เราค่อยใช้มันปิดแผลนะ!", optionSprites[1])
             }),
             new QuestionStep("ขั้นตอนที่ 2: ห้ามเลือด", new List<Option>
             {
-                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด แต่ไม่เหมาะกับการห้ามเลือด เพราะมันซับเลือดได้ไม่ดี!", optionSprites[6]),
-                new Option("ผ้าก๊อซสะอาด", true, "นี่แหละ! ผ้าก๊อซสะอาด ใช้ห้ามเลือดได้ดีเลย แค่กดมันลงไปที่แผลก็ช่วยหยุดเลือดได้!", optionSprites[4]),
-                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาดเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด เพราะมันจะแสบและไม่ช่วยหยุดเลือดนะ!", optionSprites[5])
+                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด\nแต่ไม่เหมาะกับการห้ามเลือด เพราะมันซับเลือดได้ไม่ดี!", optionSprites[6]),
+                new Option("ผ้าก๊อซสะอาด", true, "นี่แหละ! ผ้าก๊อซสะอาด ใช้ห้ามเลือดได้ดีเลย\nแค่กดมันลงไปที่แผลก็ช่วยหยุดเลือดได้!", optionSprites[4]),
+                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาดเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด\nเพราะมันจะแสบและไม่ช่วยหยุดเลือดนะ!", optionSprites[5])
             }),
             new QuestionStep("ขั้นตอนที่ 3: ทายาใส่แผล", new List<Option>
             {
-                new Option("ยาฆ่าเชื้อ", true, "ยาฆ่าเชื้อช่วยป้องกันเชื้อโรคจากแผล เราทาลงไปบนแผลเพื่อให้แน่ใจว่าแผลจะไม่ติดเชื้อ!", optionSprites[2]),
-                new Option("น้ำเกลือ", false, "น้ำเกลือใช้ล้างแผลได้ แต่ตอนนี้เราต้องการยาฆ่าเชื้อที่มีพลังในการป้องกันเชื้อโรคมากกว่า!", optionSprites[0]),
-                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยาไว้ปิดแผลเล็ก ๆ แต่ว่ายังไม่ได้ทายาเลย ต้องทายาก่อนแล้วค่อยปิดแผลนะ!", optionSprites[1])
+                new Option("ยาฆ่าเชื้อ", true, "ยาฆ่าเชื้อช่วยป้องกันเชื้อโรคจากแผล\nเราทาลงไปบนแผลเพื่อให้แน่ใจว่าแผลจะไม่ติดเชื้อ!", optionSprites[2]),
+                new Option("น้ำเกลือ", false, "น้ำเกลือใช้ล้างแผลได้ แต่ตอนนี้เราต้องการยาฆ่าเชื้อ\nที่มีพลังในการป้องกันเชื้อโรคมากกว่า!", optionSprites[0]),
+                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยาไว้ปิดแผลเล็ก ๆ แต่ว่ายังไม่ได้ทายาเลย\nต้องทายาก่อนแล้วค่อยปิดแผลนะ!", optionSprites[1])
             }),
             new QuestionStep("ขั้นตอนที่ 4: ปิดแผล", new List<Option>
             {
-                new Option("ปลาสเตอร์ยา", true, "นี่แหละ! ปลาสเตอร์ยาช่วยปิดแผลเล็ก ๆ ให้แผลสะอาดและไม่โดนเชื้อโรค!", optionSprites[1]),
-                new Option("ผ้าก๊อซสะอาด", false, "ผ้าก๊อซสะอาดเหมาะกับแผลใหญ่ ใช้ปิดแผลที่ทำความสะอาดแล้วเพื่อป้องกันไม่ให้เชื้อโรคเข้า!", optionSprites[4]),
-                new Option("ผ้าพันแผล", false, "ถ้าแผลใหญ่กว่านั้น ผ้าพันแผลจะช่วยพันแผลทั้งหมดได้และช่วยปกป้องแผล!", optionSprites[3 ])
+                new Option("ปลาสเตอร์ยา", true, "นี่แหละ! ปลาสเตอร์ยาช่วยปิดแผลเล็ก ๆ\nให้แผลสะอาดและไม่โดนเชื้อโรค!", optionSprites[1]),
+                new Option("ผ้าก๊อซสะอาด", false, "ผ้าก๊อซสะอาดเหมาะกับแผลใหญ่\nใช้ปิดแผลที่ทำความสะอาดแล้วเพื่อป้องกันไม่ให้เชื้อโรคเข้า!", optionSprites[4]),
+                new Option("ผ้าพันแผล", false, "ถ้าแผลใหญ่กว่านั้น\nผ้าพันแผลจะช่วยพันแผลทั้งหมดได้และช่วยปกป้องแผล!", optionSprites[3 ])
             })
         };
     }
@@ -102,6 +104,7 @@ public class MiniGameManager : MonoBehaviour
         // ตรวจสอบว่าคำตอบถูกหรือผิด
         if (option.IsCorrect)
         {
+            SoundManager.Instance.Play(SoundManager.SoundName.True);
             currentStepIndex++;
             if (currentStepIndex < steps.Count)
             {
@@ -110,10 +113,13 @@ public class MiniGameManager : MonoBehaviour
             else
             {
                 responseText.text = "จบขั้นตอนทั้งหมดแล้ว! เก่งมาก!";
+                correctImage.gameObject.SetActive(true);
+                miniGame.gameObject.SetActive(false);
             }
         }
         else
         {
+            SoundManager.Instance.Play(SoundManager.SoundName.False);
             // แสดงข้อความ "ผิด" และทำให้ปุ่มมืดลง
             wrongText[optionIndex].gameObject.SetActive(true);
         }

@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Setting : MonoBehaviour
 {
     public Canvas setting;
-    
+
     [SerializeField] public Slider volumeSlider;
     public AudioSource audioSource;
 
     void Start()
     {
+
         volumeSlider.value = PlayerPrefs.GetFloat("volume", 1);
         audioSource.volume = volumeSlider.value;
 
@@ -22,7 +23,7 @@ public class Setting : MonoBehaviour
         audioSource.volume = volume;
         PlayerPrefs.SetFloat("volume", volume);
     }
-    
+
 
     public void SettingButton()
     {

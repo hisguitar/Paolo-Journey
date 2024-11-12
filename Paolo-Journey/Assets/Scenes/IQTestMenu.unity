@@ -845,7 +845,6 @@ GameObject:
   m_Component:
   - component: {fileID: 295731882}
   - component: {fileID: 295731881}
-  - component: {fileID: 295731883}
   m_Layer: 0
   m_Name: Scenes Manager
   m_TagString: Untagged
@@ -880,21 +879,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &295731883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295731880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50521bd6c36a2e24797ea18ab1498190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  volumeSlider: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!1 &385385066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,7 +4777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 295731883}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Setting, Assembly-CSharp
         m_MethodName: SettingButton
         m_Mode: 1
@@ -5264,7 +5248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 295731883}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Setting, Assembly-CSharp
         m_MethodName: SettingButton
         m_Mode: 1
