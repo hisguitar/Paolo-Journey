@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 [Serializable]
 public class Sound
 {
+	[SerializeField] private GameObject s;
 	public SoundManager.SoundName soundName;
 	public AudioClip clip;
 	public AudioMixerGroup audioMixerGroup;

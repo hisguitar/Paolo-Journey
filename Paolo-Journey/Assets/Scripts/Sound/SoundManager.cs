@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SoundManager : SingletonPersistent<SoundManager>
 {
+	[SerializeField] private GameObject s;
 	[SerializeField] private Sound[] sounds;
 	private Sound currentMusic;
 	
