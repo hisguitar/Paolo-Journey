@@ -65,7 +65,7 @@ public class TrueOrFalse : MonoBehaviour
 		if (currentQuestion >= questionImage.Length) return;
 		if (isTrue && isShouldEat[currentQuestion] || !isTrue && !isShouldEat[currentQuestion])
 		{	
-			SoundManager.Instance.Play(SoundManager.SoundName.Correct);
+			GSoundManager.Instance.Play(GSoundManager.GSoundName.Correct);
 			score += 10;
 			correctAnswer.image.color = new Color32(113, 169, 0, 210);
 			correctAnswerText.color = new Color32(171, 255, 0, 255);
@@ -73,7 +73,7 @@ public class TrueOrFalse : MonoBehaviour
 		}
 		else
 		{
-			SoundManager.Instance.Play(SoundManager.SoundName.Wrong);
+			GSoundManager.Instance.Play(GSoundManager.GSoundName.Wrong);
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
 			correctAnswerText.text = "Wrong Answer!\nno point";
@@ -192,7 +192,7 @@ public class TrueOrFalse : MonoBehaviour
 	{
 		if (isOpen)
 		{
-			SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
+			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClickButton);
 			foodDescriptionBackground.SetActive(true);
 			if (currentQuestion >= questionImage.Length) return;
 			foodDescriptionText.text = foodDescription[currentQuestion];
