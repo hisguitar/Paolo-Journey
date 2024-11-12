@@ -13,7 +13,8 @@ public class GSoundManager : Singleton<GSoundManager>
 		TrueOrFalse,
 		Correct,
 		Wrong,
-		ClickButton
+		ClickButton,
+		ClearGame,
 	}
 	
 	// For setting sound

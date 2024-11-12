@@ -102,13 +102,15 @@ public class TrueOrFalse : MonoBehaviour
 		if (isEnd)
 		{
 			Debug.Log("Load next scene here!");
-			SceneManager.LoadScene(sceneName);
+			//SceneManager.LoadScene(sceneName);
+			FadeTransition.Instance.FadeOutAndLoadScene(sceneName);
 		}
 		
-		if (currentQuestion >= questionImage.Length)
+		if (!isEnd && currentQuestion >= questionImage.Length)
 		{
 			// Complete here!
 			Debug.Log("There is no more question.");
+			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClearGame);
 			correctAnswer.image.color = new Color32(0, 163, 255, 210);
 			correctAnswerText.color = Color.white;
 			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
@@ -137,6 +139,8 @@ public class TrueOrFalse : MonoBehaviour
 	// Used in ChangeQuestion()
 	private void SetImage()
 	{
+		if (currentQuestion >= questionImage.Length) return;
+		
 		// Set image sprite to [currentProposition] number in array list
 		question.sprite = questionImage[currentQuestion];
 		//choiceOne.image.sprite = choiceOneImage[currentQuestion];
