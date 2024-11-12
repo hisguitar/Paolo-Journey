@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &34025621
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -479767144307841536, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394149415336127682, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063616720981573822, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
+      propertyPath: m_Name
+      value: MusicBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c210cecd1aa6ec44d8d751df8ebf384c, type: 3}
 --- !u!1 &563153021
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1719352789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719352788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb1ac95f945ca624081bb1fdefa1fc0f, type: 3}
   m_Name: 
@@ -201,46 +262,37 @@ MonoBehaviour:
   sounds:
   - soundName: 0
     clip: {fileID: 8300000, guid: be30eef2d8e866d4299486d9f2759630, type: 3}
-    audioMixerGroup: {fileID: -7768763463039210015, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
     loop: 1
-    volume: 0.25
+    volume: 0.05
     audioSource: {fileID: 0}
   - soundName: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioMixerGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
+    clip: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0
     audioSource: {fileID: 0}
   - soundName: 2
-    clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
-    audioMixerGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
+    clip: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0
     audioSource: {fileID: 0}
   - soundName: 3
-    clip: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
-    audioMixerGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
+    clip: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0
     audioSource: {fileID: 0}
   - soundName: 4
-    clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
-    audioMixerGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
+    clip: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0
     audioSource: {fileID: 0}
   - soundName: 5
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioMixerGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
+    clip: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0
     audioSource: {fileID: 0}
-  - soundName: 6
-    clip: {fileID: 8300000, guid: ca361e0211ec5674faa272340bc67fac, type: 3}
-    audioMixerGroup: {fileID: -7768763463039210015, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
-    loop: 1
-    volume: 0.25
-    audioSource: {fileID: 0}
+  sfxGroup: {fileID: 0}
+  defaultMusic: {fileID: 0}
+  iqTestMusic: {fileID: 0}
 --- !u!4 &1719352790
 Transform:
   m_ObjectHideFlags: 0
@@ -262,3 +314,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1719352790}
   - {fileID: 563153023}
+  - {fileID: 34025621}
