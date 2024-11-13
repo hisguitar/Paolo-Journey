@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class GSoundManager : SingletonPersistent<GSoundManager>
+public class GSoundManager : Singleton<GSoundManager>
 {
 	[SerializeField] private GSound[] sounds;
 	private GSound currentMusic;
@@ -13,9 +13,10 @@ public class GSoundManager : SingletonPersistent<GSoundManager>
 		TrueOrFalse,
 		Correct,
 		Wrong,
-		ClickButton
+		ClickButton,
+		ClearGame,
 	}
-
+	
 	// For setting sound
 	public void Play(GSoundName soundName)
 	{
