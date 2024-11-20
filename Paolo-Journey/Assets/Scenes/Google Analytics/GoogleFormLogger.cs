@@ -9,12 +9,12 @@ using UnityEngine;
 		
 		// Call this function when you need to submit form
 		// Send data to Google Forms
-		public void SubmitForm(int correctAnswers, List<string> incorrectFoods)
+		public void SubmitForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount)
 		{
-			StartCoroutine(SendToGoogleForm(correctAnswers, incorrectFoods));
+			StartCoroutine(SendToGoogleForm(correctAnswers, incorrectFoods, viewDescription, tapCount));
 		}
 
-		private IEnumerator SendToGoogleForm(int correctAnswers, List<string> incorrectFoods)
+		private IEnumerator SendToGoogleForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount)
 		{
 			WWWForm form = new WWWForm();
 			
@@ -26,6 +26,9 @@ using UnityEngine;
 			{
 				form.AddField("entry.1964719216", incorrectFoods[i]);
 			}
+			// 3. (Short Answer) How many times have players viewed the food description?
+			form.AddField("entry.1639523446", viewDescription.ToString());
+			form.AddField("entry.596631467", tapCount.ToString());
 
 			// Send HTTP POST request
 			using (UnityWebRequest www = UnityWebRequest.Post(FormUrl, form))
