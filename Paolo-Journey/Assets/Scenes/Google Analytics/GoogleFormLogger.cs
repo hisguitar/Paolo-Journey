@@ -1,6 +1,6 @@
 	using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+	using System.Collections.Generic;
+	using UnityEngine;
 	using UnityEngine.Networking;
 
 	public class GoogleFormLogger : MonoBehaviour
@@ -9,12 +9,12 @@ using UnityEngine;
 		
 		// Call this function when you need to submit form
 		// Send data to Google Forms
-		public void SubmitForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount)
+		public void SubmitForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount, string totalSeconds)
 		{
-			StartCoroutine(SendToGoogleForm(correctAnswers, incorrectFoods, viewDescription, tapCount));
+			StartCoroutine(SendToGoogleForm(correctAnswers, incorrectFoods, viewDescription, tapCount, totalSeconds));
 		}
 
-		private IEnumerator SendToGoogleForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount)
+		private IEnumerator SendToGoogleForm(int correctAnswers, List<string> incorrectFoods, int viewDescription, int tapCount, string totalSeconds)
 		{
 			WWWForm form = new WWWForm();
 			
@@ -29,6 +29,7 @@ using UnityEngine;
 			// 3. (Short Answer) How many times have players viewed the food description?
 			form.AddField("entry.1639523446", viewDescription.ToString());
 			form.AddField("entry.596631467", tapCount.ToString());
+			form.AddField("entry.1530290587", totalSeconds);
 
 			// Send HTTP POST request
 			using (UnityWebRequest www = UnityWebRequest.Post(FormUrl, form))

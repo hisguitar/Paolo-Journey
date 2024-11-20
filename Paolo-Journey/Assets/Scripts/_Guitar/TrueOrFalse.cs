@@ -25,6 +25,7 @@ public class TrueOrFalse : MonoBehaviour
 	public bool[] isShouldEat;
 	
 	[Header("Score")]
+	public Timer timer;
 	[SerializeField] private int currentQuestion = 0;
 	[SerializeField] private int score = 0;
 	public List<string> incorrectFoods = new();
@@ -43,6 +44,7 @@ public class TrueOrFalse : MonoBehaviour
 		correctAnswer.onClick.AddListener(Hide);
 		UpdateScore();
 		SetImage();
+		timer.StartTimer();
 	}
 	
 	private void Update()
@@ -155,10 +157,11 @@ public class TrueOrFalse : MonoBehaviour
 			// Complete here!
 			Debug.Log("There is no more question.");
 			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClearGame);
+			timer.StopTimer();
 			correctAnswer.image.color = new Color32(0, 163, 255, 210);
 			correctAnswerText.color = Color.white;
 			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
-			googleFormLogger.SubmitForm(score / 10, incorrectFoods, viewDescription, tapCount);
+			googleFormLogger.SubmitForm(score / 10, incorrectFoods, viewDescription, tapCount, timer.GetFormattedTime());
 			
 			isEnd = true;
 			return;
