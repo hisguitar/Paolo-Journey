@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,11 +26,15 @@ public class TrueOrFalse : MonoBehaviour
 	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceOneImage;
 	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceTwoImage;
 	[SerializeField] private string[] imageName;
+	[SerializeField] private string[] foodName = {"Apple", "Avocado", "Beer", "Watermelon", "Bacon", "Banana", "Grape", "Peach", "Wine", "Pepper Red"};
 	[SerializeField] private bool[] isShouldEat;
 	[SerializeField] private int score = 0;
 	[SerializeField] private int currentQuestion = 0;
 	[SerializeField] private string sceneName;
 	private bool isEnd = false;
+	
+	[SerializeField] GoogleFormLogger googleFormLogger;
+	public List<string> incorrectFoods = new();
 	//private Vector3 choiceOnePosition;
 	//private Vector3 choiceTwoPosition;
 	
@@ -77,7 +82,13 @@ public class TrueOrFalse : MonoBehaviour
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
 			correctAnswerText.text = "Wrong Answer!\nno point";
+			UpdateIncorrectFoods(currentQuestion);
 		}
+	}
+	
+	public void UpdateIncorrectFoods(int orderNumber)
+	{
+		incorrectFoods.Add(foodName[orderNumber]);
 	}
 	
 	private IEnumerator ExpandBannerHeight(float startHeight, float endHeight, float duration)
@@ -114,6 +125,8 @@ public class TrueOrFalse : MonoBehaviour
 			correctAnswer.image.color = new Color32(0, 163, 255, 210);
 			correctAnswerText.color = Color.white;
 			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
+			googleFormLogger.SubmitForm(score / 10, incorrectFoods);
+			
 			isEnd = true;
 			return;
 		}

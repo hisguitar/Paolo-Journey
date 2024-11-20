@@ -553,10 +553,22 @@ MonoBehaviour:
   - Peach
   - Wine
   - Pepper Red
+  foodName:
+  - Apple
+  - Avocado
+  - Beer
+  - Watermelon
+  - Bacon
+  - Banana
+  - Grape
+  - Peach
+  - Wine
+  - Pepper Red
   isShouldEat: 01010001000101010001
   score: 0
   currentQuestion: 0
   sceneName: PaoloJourney
+  googleFormLogger: {fileID: 746085859}
 --- !u!1 &23709355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1640,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!1 &746085858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746085860}
+  - component: {fileID: 746085859}
+  m_Layer: 0
+  m_Name: Google Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &746085859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746085858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5eb0bad70d33f4d8ef07c7cbf54373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &746085860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746085858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5750813, y: 0.6646031, z: -0.012521308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782025103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,3 +2906,4 @@ SceneRoots:
   - {fileID: 1150852015}
   - {fileID: 843575775}
   - {fileID: 204873801}
+  - {fileID: 746085860}
