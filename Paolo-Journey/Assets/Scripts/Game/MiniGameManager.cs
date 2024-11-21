@@ -9,6 +9,7 @@ public class MiniGameManager : MonoBehaviour
     public GameObject correctImage;
     public TMP_Text questionText;
     public TMP_Text responseText;
+    public GameObject response;
     public Button[] optionButtons;
 
     public Sprite[] optionSprites; // อาร์เรย์ของรูปภาพสำหรับตัวเลือกแต่ละคำตอบ
@@ -16,6 +17,8 @@ public class MiniGameManager : MonoBehaviour
 
     private List<QuestionStep> steps;
     private int currentStepIndex = 0;
+    private bool isResponseVisible = false;
+
     
     void Start()
     {
@@ -35,21 +38,21 @@ public class MiniGameManager : MonoBehaviour
             }),
             new QuestionStep("ขั้นตอนที่ 2: ห้ามเลือด", new List<Option>
             {
-                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด\nแต่ไม่เหมาะกับการห้ามเลือด เพราะมันซับเลือดได้ไม่ดี!", optionSprites[6]),
+                new Option("สำลี", false, "สำลีใช้กับการทำความสะอาด\nแต่ไม่เหมาะกับการห้ามเลือด\nเพราะมันซับเลือดได้ไม่ดี!", optionSprites[6]),
                 new Option("ผ้าก๊อซสะอาด", true, "นี่แหละ! ผ้าก๊อซสะอาด ใช้ห้ามเลือดได้ดีเลย\nแค่กดมันลงไปที่แผลก็ช่วยหยุดเลือดได้!", optionSprites[4]),
-                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาดเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด\nเพราะมันจะแสบและไม่ช่วยหยุดเลือดนะ!", optionSprites[5])
+                new Option("แอลกอฮอล์", false, "แอลกอฮอล์ใช้ทำความสะอาด\nเครื่องมือได้ แต่ห้ามใช้ห้ามเลือด\nเพราะมันจะแสบและ\nไม่ช่วยหยุดเลือดนะ!", optionSprites[5])
             }),
             new QuestionStep("ขั้นตอนที่ 3: ทายาใส่แผล", new List<Option>
             {
-                new Option("ยาฆ่าเชื้อ", true, "ยาฆ่าเชื้อช่วยป้องกันเชื้อโรคจากแผล\nเราทาลงไปบนแผลเพื่อให้แน่ใจว่าแผลจะไม่ติดเชื้อ!", optionSprites[2]),
-                new Option("น้ำเกลือ", false, "น้ำเกลือใช้ล้างแผลได้ แต่ตอนนี้เราต้องการยาฆ่าเชื้อ\nที่มีพลังในการป้องกันเชื้อโรคมากกว่า!", optionSprites[0]),
-                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยาไว้ปิดแผลเล็ก ๆ แต่ว่ายังไม่ได้ทายาเลย\nต้องทายาก่อนแล้วค่อยปิดแผลนะ!", optionSprites[1])
+                new Option("ยาฆ่าเชื้อ", true, "ยาฆ่าเชื้อช่วยป้องกันเชื้อโรคจากแผล\nเราทาลงไปบนแผล\nเพื่อให้แน่ใจว่าแผลจะไม่ติดเชื้อ!", optionSprites[2]),
+                new Option("น้ำเกลือ", false, "น้ำเกลือใช้ล้างแผลได้\nแต่ตอนนี้เราต้องการยาฆ่าเชื้อ\nที่มีพลังในการป้องกันเชื้อโรคมากกว่า!", optionSprites[0]),
+                new Option("ปลาสเตอร์ยา", false, "ปลาสเตอร์ยาไว้ปิดแผลเล็กๆ\nแต่ว่ายังไม่ได้ทายาเลย\nต้องทายาก่อนแล้วค่อยปิดแผลนะ!", optionSprites[1])
             }),
             new QuestionStep("ขั้นตอนที่ 4: ปิดแผล", new List<Option>
             {
-                new Option("ปลาสเตอร์ยา", true, "นี่แหละ! ปลาสเตอร์ยาช่วยปิดแผลเล็ก ๆ\nให้แผลสะอาดและไม่โดนเชื้อโรค!", optionSprites[1]),
-                new Option("ผ้าก๊อซสะอาด", false, "ผ้าก๊อซสะอาดเหมาะกับแผลใหญ่\nใช้ปิดแผลที่ทำความสะอาดแล้วเพื่อป้องกันไม่ให้เชื้อโรคเข้า!", optionSprites[4]),
-                new Option("ผ้าพันแผล", false, "ถ้าแผลใหญ่กว่านั้น\nผ้าพันแผลจะช่วยพันแผลทั้งหมดได้และช่วยปกป้องแผล!", optionSprites[3 ])
+                new Option("ปลาสเตอร์ยา", true, "นี่แหละ! ปลาสเตอร์ยาช่วยปิดแผลเล็กๆ\nให้แผลสะอาดและไม่โดนเชื้อโรค!", optionSprites[1]),
+                new Option("ผ้าก๊อซสะอาด", false, "ผ้าก๊อซสะอาดเหมาะกับแผลใหญ่\nใช้ปิดแผลที่ทำความสะอาด\nแล้วเพื่อป้องกันไม่ให้เชื้อโรคเข้า!", optionSprites[4]),
+                new Option("ผ้าพันแผล", false, "ถ้าแผลใหญ่กว่านั้น\nผ้าพันแผลจะช่วยพันแผล\nทั้งหมดได้\nและช่วยปกป้องแผล!", optionSprites[3 ])
             })
         };
     }
@@ -122,6 +125,19 @@ public class MiniGameManager : MonoBehaviour
             SoundManager.Instance.Play(SoundManager.SoundName.False);
             // แสดงข้อความ "ผิด" และทำให้ปุ่มมืดลง
             wrongText[optionIndex].gameObject.SetActive(true);
+            
+            // แสดง Response และตั้งสถานะให้พร้อมตรวจจับการคลิก
+            response.SetActive(true);
+            isResponseVisible = true; // เปิดสถานะว่ากำลังแสดง response
+        }
+    }
+    private void Update()
+    {
+        // ตรวจสอบว่า response กำลังแสดงและมีการคลิกหน้าจอ
+        if (isResponseVisible && Input.GetMouseButtonDown(0))
+        {
+            response.SetActive(false); // ซ่อน response
+            isResponseVisible = false; // ปิดสถานะ
         }
     }
     

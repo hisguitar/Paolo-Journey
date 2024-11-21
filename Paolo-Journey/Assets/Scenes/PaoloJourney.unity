@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -275878925, guid: 0f0e16aa5ffeb324596d8e323ffc98e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3a14d52a14a7984b8aaf29f245dd964, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5396,7 +5396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: {fileID: 873787982}
-  sceneName: Media1
+  sceneName: NewGame2Menu
 --- !u!1 &2107481919
 GameObject:
   m_ObjectHideFlags: 0

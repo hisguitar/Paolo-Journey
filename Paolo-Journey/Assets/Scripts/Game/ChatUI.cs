@@ -33,13 +33,13 @@ public class ChatUI : MonoBehaviour
     
     private void Start()
     {
-        //ShowDialogue();
+        ShowDialogue();
     }
 
     private void Update()
     {
         // เช็คว่า videoCanvas ถูกเปิดอยู่หรือไม่
-        if (videoCanvas.activeSelf)
+        /*if (videoCanvas.activeSelf)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -49,7 +49,7 @@ public class ChatUI : MonoBehaviour
                 ShowDialogue();
             }
             return; // หยุดการทำงานของ Chat UI จนกว่า Video Canvas จะปิด
-        }
+        }*/
         
         if (Input.GetMouseButtonDown(0)) // เมื่อกดคลิกซ้ายหรือแตะหน้าจอ
         {
