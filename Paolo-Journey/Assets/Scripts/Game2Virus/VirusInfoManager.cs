@@ -12,12 +12,15 @@ public class VirusInfoManager : MonoBehaviour
         foreach (GameObject panel in infoPanels)
         {
             panel.SetActive(false);
+            SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
         }
 
         // แสดง Panel ที่ตรงกับไวรัสที่กด
         if (virusIndex >= 0 && virusIndex < infoPanels.Length)
         {
             infoPanels[virusIndex].SetActive(true);
+            SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
+
         }
     }
 
