@@ -1,47 +1,77 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TrueOrFalse : MonoBehaviour
 {
-	// 1 proposition : 2 choices
 	[Header("Question Elements")]
-	[SerializeField] private Image question;
-	//[SerializeField] private Button choiceOne;
-	//[SerializeField] private Button choiceTwo;
-	[SerializeField] private TMP_Text imageNameText;
-	[SerializeField] private GameObject foodDescriptionBackground;
-	[SerializeField] private TMP_Text foodDescriptionText;
-	[TextArea] [SerializeField] private string[] foodDescription;
-	[Header("Result")]
-	[SerializeField] private Button correctAnswer;
-	[SerializeField] private Image correctAnswerBanner;
-	[SerializeField] private TMP_Text correctAnswerText;
-	[SerializeField] private TMP_Text finishScoreText;
-	[Header("Image List")]
-	[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] questionImage;
-	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceOneImage;
-	//[Tooltip("questionImage, choiceOneImage, choiceTwoImage must be images that are in the same question.")] [SerializeField] private Sprite[] choiceTwoImage;
-	[SerializeField] private string[] imageName;
-	[SerializeField] private bool[] isShouldEat;
-	[SerializeField] private int score = 0;
+	public Image question;
+	public TMP_Text imageNameText;
+	public GameObject foodDescriptionBackground;
+	public TMP_Text foodDescriptionText;
+	[TextArea] public string[] foodDescription;
+	
+	[Header("Result Element")]
+	public Button correctAnswer;
+	public Image correctAnswerBanner;
+	public TMP_Text correctAnswerText;
+	public TMP_Text finishScoreText;
+	
+	[Header("About Image")]
+	public Sprite[] questionImage;
+	public string[] imageName = {"Apple", "Avocado", "Beer", "Watermelon", "Bacon", "Banana", "Grape", "Peach", "Wine", "Pepper Red"};
+	public bool[] isShouldEat;
+	
+	[Header("Score")]
+	public Timer timer;
+	public TMP_Text timerText; 
 	[SerializeField] private int currentQuestion = 0;
-	[SerializeField] private string sceneName;
+	[SerializeField] private int score = 0;
+	public List<string> incorrectFoods = new();
+	
+	[Header("Analytics")]
+	public GoogleFormLogger googleFormLogger;
+	[SerializeField] private int viewDescription = 0;
+	[SerializeField] private int tapCount = 0;
 	private bool isEnd = false;
-	//private Vector3 choiceOnePosition;
-	//private Vector3 choiceTwoPosition;
+	
+	[Header("Other")]
+	public string sceneName;
 	
 	private void Start()
 	{
 		correctAnswer.onClick.AddListener(Hide);
 		UpdateScore();
 		SetImage();
+		timer.StartTimer();
+	}
+	
+	private void Update()
+	{
+		timerText.text = "Time " + timer.GetFormattedTime();
 		
-		// Save anchored position of button for random in future
-		//choiceOnePosition = choiceOne.GetComponent<RectTransform>().anchoredPosition;
-		//choiceTwoPosition = choiceTwo.GetComponent<RectTransform>().anchoredPosition;
+		// Check if the device has a touch screen.
+		if (Input.touchCount > 0)
+		{
+			// Loop to check for screen taps
+			for (int i = 0; i < Input.touchCount; i++)
+			{
+				Touch touch = Input.GetTouch(i);
+
+				// Check if it is the first touch (first tap)
+				if (touch.phase == TouchPhase.Began)
+				{
+					tapCount++;
+				}
+			}
+		}
+		// Or if you use the mouse in the Editor, you can also count clicks.
+		else if (Input.GetMouseButtonDown(0)) // 0 is left click
+		{
+			tapCount++;
+		}
 	}
 	
 	public void ChangeQuestion()
@@ -53,10 +83,6 @@ public class TrueOrFalse : MonoBehaviour
 		UpdateScore();
 	}
 	
-	/// <summary>
-	/// Put only in true choice,
-	/// in position of choice, i will use other methods to manage.
-	/// </summary>
 	public void TrueOrNot(bool isTrue)
 	{
 		correctAnswer.gameObject.SetActive(true);
@@ -77,6 +103,29 @@ public class TrueOrFalse : MonoBehaviour
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
 			correctAnswerText.text = "Wrong Answer!\nno point";
+			UpdateIncorrectFoods(currentQuestion);
+		}
+	}
+	
+	public void UpdateIncorrectFoods(int orderNumber)
+	{
+		incorrectFoods.Add(imageName[orderNumber]);
+	}
+	
+	public void OpenFoodDescription(bool isOpen)
+	{
+		if (isOpen)
+		{
+			viewDescription++;
+			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClickButton);
+			foodDescriptionBackground.SetActive(true);
+			if (currentQuestion >= questionImage.Length) return;
+			foodDescriptionText.text = foodDescription[currentQuestion];
+			
+		}
+		else
+		{
+			foodDescriptionBackground.SetActive(false);
 		}
 	}
 	
@@ -111,9 +160,12 @@ public class TrueOrFalse : MonoBehaviour
 			// Complete here!
 			Debug.Log("There is no more question.");
 			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClearGame);
+			timer.StopTimer();
 			correctAnswer.image.color = new Color32(0, 163, 255, 210);
 			correctAnswerText.color = Color.white;
 			correctAnswerText.text = $"You have answered all questions.\nYour score is {score}/{questionImage.Length * 10}";
+			googleFormLogger.SubmitForm(score / 10, incorrectFoods, viewDescription, tapCount, timer.GetFormattedTime());
+			
 			isEnd = true;
 			return;
 		}
@@ -127,7 +179,6 @@ public class TrueOrFalse : MonoBehaviour
 		}
 	}
 	
-	#region Used in ChangeQuestion()
 	// Used in ChangeQuestion()
 	private void UpdateScore()
 	{
@@ -136,35 +187,14 @@ public class TrueOrFalse : MonoBehaviour
 		StartCoroutine(PopupText(1.0f, 1.15f, 0.25f));
 	}
 	
-	// Used in ChangeQuestion()
 	private void SetImage()
 	{
 		if (currentQuestion >= questionImage.Length) return;
 		
 		// Set image sprite to [currentProposition] number in array list
 		question.sprite = questionImage[currentQuestion];
-		//choiceOne.image.sprite = choiceOneImage[currentQuestion];
-		//choiceTwo.image.sprite = choiceTwoImage[currentQuestion];
 		imageNameText.text = imageName[currentQuestion];
 	}
-	
-	// Used in ChangeQuestion()
-	// private void RandomizeChoicesPosition()
-	// {
-	// 	bool shouldSwap = Random.Range(0, 2) == 1; // 50% chances because it doesn't include the last number, which is 2.
-		
-	// 	if (shouldSwap)
-	// 	{
-	// 		choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
-	// 		choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
-	// 	}
-	// 	else
-	// 	{
-	// 		choiceOne.GetComponent<RectTransform>().anchoredPosition = choiceOnePosition;
-	// 		choiceTwo.GetComponent<RectTransform>().anchoredPosition = choiceTwoPosition;
-	// 	}
-	// }
-	#endregion
 	
 	private IEnumerator PopupText(float startScale, float endScale, float duration)
 	{
@@ -190,20 +220,5 @@ public class TrueOrFalse : MonoBehaviour
 		}
 
 		finishScoreText.rectTransform.localScale = new Vector3(startScale, startScale, 1f);
-	}
-	
-	public void OpenFoodDescription(bool isOpen)
-	{
-		if (isOpen)
-		{
-			GSoundManager.Instance.Play(GSoundManager.GSoundName.ClickButton);
-			foodDescriptionBackground.SetActive(true);
-			if (currentQuestion >= questionImage.Length) return;
-			foodDescriptionText.text = foodDescription[currentQuestion];
-		}
-		else
-		{
-			foodDescriptionBackground.SetActive(false);
-		}
 	}
 }
