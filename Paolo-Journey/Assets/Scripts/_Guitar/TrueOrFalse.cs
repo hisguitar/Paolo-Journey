@@ -26,6 +26,7 @@ public class TrueOrFalse : MonoBehaviour
 	
 	[Header("Score")]
 	public Timer timer;
+	public TMP_Text timerText; 
 	[SerializeField] private int currentQuestion = 0;
 	[SerializeField] private int score = 0;
 	public List<string> incorrectFoods = new();
@@ -49,6 +50,8 @@ public class TrueOrFalse : MonoBehaviour
 	
 	private void Update()
 	{
+		timerText.text = "Time " + timer.GetFormattedTime();
+		
 		// Check if the device has a touch screen.
 		if (Input.touchCount > 0)
 		{
