@@ -2213,7 +2213,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1312, y: 984}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764363084
 MonoBehaviour:
@@ -3231,6 +3231,7 @@ MonoBehaviour:
   sfxGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
   defaultMusic: {fileID: 8300000, guid: be30eef2d8e866d4299486d9f2759630, type: 3}
   iqTestMusic: {fileID: 8300000, guid: f49425c52af313b44b4f07dfb6ae29bc, type: 3}
+  virusMusic: {fileID: 0}
 --- !u!4 &1304858021
 Transform:
   m_ObjectHideFlags: 0

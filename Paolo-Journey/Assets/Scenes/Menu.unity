@@ -497,6 +497,7 @@ MonoBehaviour:
   sfxGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
   defaultMusic: {fileID: 8300000, guid: be30eef2d8e866d4299486d9f2759630, type: 3}
   iqTestMusic: {fileID: 8300000, guid: f49425c52af313b44b4f07dfb6ae29bc, type: 3}
+  virusMusic: {fileID: 8300000, guid: 5d4acfb1616e7734c94ccd177a04f71f, type: 3}
 --- !u!4 &110495279
 Transform:
   m_ObjectHideFlags: 0

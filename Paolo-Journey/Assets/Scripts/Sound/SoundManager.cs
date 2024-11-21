@@ -10,6 +10,8 @@ public class SoundManager : Singleton<SoundManager>
 	private static SoundManager instance;
 	public AudioClip defaultMusic; // เพลงสำหรับ Scene ปกติ
 	public AudioClip iqTestMusic;  // เพลงสำหรับ Scene IQ Test
+	public AudioClip virusMusic;  // เพลงสำหรับ Scene IQ Test
+
 	private AudioSource audioSource;
 
 	private void Start()
@@ -45,6 +47,14 @@ public class SoundManager : Singleton<SoundManager>
 			if (audioSource.clip != iqTestMusic)
 			{
 				audioSource.clip = iqTestMusic;
+				audioSource.Play();
+			}
+		}
+		else if(scene.name == "NewGame2" || scene.name == "NewGame2Menu")
+		{
+			if (audioSource.clip != virusMusic)
+			{
+				audioSource.clip = virusMusic;
 				audioSource.Play();
 			}
 		}
