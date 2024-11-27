@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class ChatUI : MonoBehaviour
 {
     public GameObject videoCanvas;
-    
+
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject chatUI; // Chat UI ที่จะแสดงข้อความ
     [SerializeField] private GameObject miniGame;
     [SerializeField] private float typingSpeed = 0.025f; // ความเร็วในการพิมพ์ทีละตัว
-    
-    
-    // เพิ่ม Sprite array สำหรับรูปโปรไฟล์ของหมอ
+
     [SerializeField] private Sprite[] doctorImages;
     [SerializeField] private Image doctorProfileImage;
-    
+
+    // เพิ่ม AudioClips สำหรับเสียงพากย์
+    [SerializeField] private AudioClip[] dialogueAudioClips;
+    private AudioSource audioSource;
+
     private string[] dialogues = {"สวัสดีครับ\nเห็นว่าเล่นสเก็ตบอร์ดล้มมาใช่ไหม\nไม่ต้องห่วงนะครับ\nเดี๋ยวหมอจะช่วยดูแลแผลให้เอง!", 
         "ครับหมอ ผมเจ็บแผลนิดหน่อยครับ", 
         "เข้าใจเลยครับ!\nแผลที่เข่าเจ็บได้ง่ายจริง ๆ\nเดี๋ยวเราทำแผลนิดหน่อยก็จะหายไวขึ้น", 
@@ -30,32 +32,19 @@ public class ChatUI : MonoBehaviour
     private int currentDialogueIndex = 0;
     private bool isTyping = false;
     private bool isDialogueComplete = false;
-    
+
     private void Start()
     {
-        //ShowDialogue();
+        audioSource = GetComponent<AudioSource>();
+        ShowDialogue();
     }
 
     private void Update()
     {
-        // เช็คว่า videoCanvas ถูกเปิดอยู่หรือไม่
-        if (videoCanvas.activeSelf)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                // ปิด Video Canvas และเปิด Chat UI
-                chatUI.SetActive(true);
-                // เริ่มแสดงข้อความใน Chat UI หลังจากปิด VideoCanvas
-                ShowDialogue();
-            }
-            return; // หยุดการทำงานของ Chat UI จนกว่า Video Canvas จะปิด
-        }
-        
         if (Input.GetMouseButtonDown(0)) // เมื่อกดคลิกซ้ายหรือแตะหน้าจอ
         {
             if (isTyping)
             {
-                // ถ้ากำลังพิมพ์อยู่ ให้ข้ามไปแสดงข้อความเต็ม
                 StopAllCoroutines();
                 dialogueText.text = dialogues[currentDialogueIndex];
                 isTyping = false;
@@ -63,7 +52,6 @@ public class ChatUI : MonoBehaviour
             }
             else if (isDialogueComplete)
             {
-                // ถ้าแสดงข้อความครบแล้ว ไปบทสนทนาถัดไป
                 currentDialogueIndex++;
                 if (currentDialogueIndex < dialogues.Length)
                 {
@@ -71,7 +59,6 @@ public class ChatUI : MonoBehaviour
                 }
                 else
                 {
-                    // ปิด Chat UI เมื่อจบบทสนทนาทั้งหมด
                     chatUI.SetActive(false);
                     miniGame.SetActive(true);
                 }
@@ -86,6 +73,14 @@ public class ChatUI : MonoBehaviour
         {
             doctorProfileImage.sprite = doctorImages[currentDialogueIndex];
         }
+
+        // เล่นเสียงพากย์
+        if (currentDialogueIndex < dialogueAudioClips.Length && dialogueAudioClips[currentDialogueIndex] != null)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(dialogueAudioClips[currentDialogueIndex]);
+        }
+
         StartCoroutine(TypeDialogue());
     }
 
@@ -93,7 +88,7 @@ public class ChatUI : MonoBehaviour
     {
         isTyping = true;
         isDialogueComplete = false;
-        
+
         foreach (char letter in dialogues[currentDialogueIndex].ToCharArray())
         {
             dialogueText.text += letter;
