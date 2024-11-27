@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public VirusSpawner virusSpawner; // ลิงก์กับ VirusSpawner
     public float spawnRate = 0.5f;
 
-    private int score = 0;
+    public int score = 0;
     private int comboCount = 0;
     private float lastHitTime = 0f;
     public float comboTimeLimit = 0.3f; // เวลาที่สามารถต่อ Combo ได้

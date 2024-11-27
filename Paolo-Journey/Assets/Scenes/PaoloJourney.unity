@@ -1514,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.59, y: 2.29}
+  m_AnchoredPosition: {x: 19.57, y: 2.29}
   m_SizeDelta: {x: 2.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540448644
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E2B\u0E49\u0E2D\u0E07\u0E2D\u0E32\u0E2B\u0E32\u0E23"
+  m_text: "\u0E41\u0E1C\u0E19\u0E01\u0E42\u0E20\u0E0A\u0E19\u0E32\u0E01\u0E32\u0E23"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
   m_sharedMaterial: {fileID: 333704787740058122, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
@@ -3269,7 +3269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.69, y: 2.29}
+  m_AnchoredPosition: {x: -2.75, y: 2.29}
   m_SizeDelta: {x: 2.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327734787
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E2B\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E41\u0E1C\u0E25"
+  m_text: "\u0E41\u0E1C\u0E19\u0E01\u0E23\u0E31\u0E01\u0E29\u0E32\u0E1A\u0E32\u0E14\u0E41\u0E1C\u0E25"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
   m_sharedMaterial: {fileID: 333704787740058122, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
@@ -4431,7 +4431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1886565427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4976,6 +4976,7 @@ MonoBehaviour:
   sfxGroup: {fileID: -7718753932791972220, guid: 14a2d4ab48065b14cbfaae3c78b00c45, type: 2}
   defaultMusic: {fileID: 8300000, guid: da26b4f85bfc75346b70e795b4304f8d, type: 3}
   iqTestMusic: {fileID: 8300000, guid: f49425c52af313b44b4f07dfb6ae29bc, type: 3}
+  virusMusic: {fileID: 0}
 --- !u!4 &1991144593
 Transform:
   m_ObjectHideFlags: 0
@@ -5137,7 +5138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E2B\u0E49\u0E2D\u0E07\u0E1E\u0E48\u0E19\u0E22\u0E32"
+  m_text: "\u0E41\u0E1C\u0E19\u0E01\u0E01\u0E33\u0E08\u0E31\u0E14\u0E40\u0E0A\u0E37\u0E49\u0E2D\u0E42\u0E23\u0E04"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
   m_sharedMaterial: {fileID: 333704787740058122, guid: b4a0b367e4e170640b787b3eee7e26b1, type: 2}
