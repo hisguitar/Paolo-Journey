@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OnTriggerEnterScene : MonoBehaviour
 {
+	[SerializeField] private PositionSaver positionSaver;
 	[SerializeField] private GameObject interactButton;
 	[SerializeField] private string sceneName;
 	
@@ -28,6 +29,7 @@ public class OnTriggerEnterScene : MonoBehaviour
 	public void ChangeScene()
 	{
 		interactButton.SetActive(false);
+		positionSaver?.SavePosition();
 		
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 		SceneManager.LoadScene(sceneName);

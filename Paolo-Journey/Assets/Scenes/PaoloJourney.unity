@@ -416,6 +416,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107491192}
   m_CullTransparentMesh: 1
+--- !u!1 &124813046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1024227332682688923, guid: 84f5a4adbbf705a4a8a91d2b1e06268f, type: 3}
+  m_PrefabInstance: {fileID: 1451205449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196116368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aaf28091374ec42bf4f2d479604ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionSaver: {fileID: 612200566}
   interactButton: {fileID: 1809712072}
   sceneName: NewGame1
 --- !u!1 &472398234
@@ -1794,6 +1800,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &612200565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612200567}
+  - component: {fileID: 612200566}
+  m_Layer: 0
+  m_Name: PositionSaver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &612200566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612200565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0f2d20e01f05d439a382b0a1b6f1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 4b94935f7094ede48b47e15ba2f576aa, type: 2}
+  player: {fileID: 124813046}
+  sceneName: PaoloJourney
+--- !u!4 &612200567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612200565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.684956, y: -0.0144996755, z: -0.048874736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &738929709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,6 +3875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aaf28091374ec42bf4f2d479604ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionSaver: {fileID: 612200566}
   interactButton: {fileID: 2107481919}
   sceneName: TrueOrFalse
 --- !u!61 &1546717412
@@ -5280,6 +5334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aaf28091374ec42bf4f2d479604ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionSaver: {fileID: 612200566}
   interactButton: {fileID: 873787982}
   sceneName: NewGame2Menu
 --- !u!1 &2107481919
@@ -5688,3 +5743,4 @@ SceneRoots:
   - {fileID: 301082872}
   - {fileID: 1991144593}
   - {fileID: 232295243}
+  - {fileID: 612200567}
