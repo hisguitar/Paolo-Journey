@@ -1,41 +1,33 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PositionSaver : MonoBehaviour
 {
-	public PlayerData playerData;
-	public GameObject player;
-	public string sceneName = "PaoloJourney";
+    public GameObject player;
 
-	private void Start()
-	{
-		if (SceneManager.GetActiveScene().name == sceneName && playerData.hasSavedPosition)
-		{
-			player.transform.position = playerData.lastPosition;
-		}
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
 
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
+        float savedX = PlayerPrefs.GetFloat("PlayerPosX", player.transform.position.x);
+        float savedY = PlayerPrefs.GetFloat("PlayerPosY", player.transform.position.y);
+        float savedZ = PlayerPrefs.GetFloat("PlayerPosZ", player.transform.position.z);
+        
+        player.transform.position = new Vector3(savedX, savedY, savedZ);
+    }
 
-	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-	{
-		if (scene.name == "PaoloJourney" && playerData.hasSavedPosition)
-		{
-			player.transform.position = playerData.lastPosition;
-		}
-	}
+    public void SavePosition()
+    {
+        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+        PlayerPrefs.Save();
+    }
 
-	private void OnDestroy()
-	{
-		SceneManager.sceneLoaded -= OnSceneLoaded;
-	}
-
-	public void SavePosition()
-	{
-		if (SceneManager.GetActiveScene().name == "PaoloJourney")
-		{
-			playerData.lastPosition = player.transform.position;
-			playerData.hasSavedPosition = true;
-		}
-	}
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("PlayerPosX");
+        PlayerPrefs.DeleteKey("PlayerPosY");
+        PlayerPrefs.DeleteKey("PlayerPosZ");
+        PlayerPrefs.Save();
+    }
 }
