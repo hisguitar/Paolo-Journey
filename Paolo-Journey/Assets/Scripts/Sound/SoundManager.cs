@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,8 @@ public class SoundManager : Singleton<SoundManager>
 	public AudioClip defaultMusic; // เพลงสำหรับ Scene ปกติ
 	public AudioClip iqTestMusic;  // เพลงสำหรับ Scene IQ Test
 	public AudioClip virusMusic;  // เพลงสำหรับ Scene IQ Test
-
+	
+	private bool isMusicStop = false;
 	private AudioSource audioSource;
 
 	private void Start()
@@ -37,10 +39,6 @@ public class SoundManager : Singleton<SoundManager>
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		// เช็คชื่อ Scene และเปลี่ยนเพลงตามต้องการ
-		if (scene.name == "TrueOrFalse")
-		{
-			audioSource.Stop();
-		}
 		
 		if (scene.name == "IQTestMenu" || scene.name == "17+" || scene.name == "Result")
 		{
@@ -58,10 +56,16 @@ public class SoundManager : Singleton<SoundManager>
 				audioSource.Play();
 			}
 		}
+		else if(scene.name == "TrueOrFalse")
+		{
+			audioSource.Stop();
+			isMusicStop = true;
+		}
 		else
 		{
-			if (audioSource.clip != defaultMusic)
+			if (audioSource.clip != defaultMusic || scene.name == "PaoloJourney" && isMusicStop == true)
 			{
+				isMusicStop = false;
 				audioSource.clip = defaultMusic;
 				audioSource.Play();
 			}

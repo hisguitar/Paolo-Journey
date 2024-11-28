@@ -24,39 +24,30 @@ public class SceneChanger : MonoBehaviour
 	#region Media
 	public void To_Media1()
 	{
-		CSVWriter.Instance.IncrementInterest("Nebulizers", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 		SceneManager.LoadScene("Media1");
 	}
 
 	public void To_Media2()
 	{
-		CSVWriter.Instance.IncrementInterest("DressingWounds", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
-
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 		SceneManager.LoadScene("Media2");
 	}
 
 	public void To_Media3()
 	{
-		CSVWriter.Instance.IncrementInterest("WashingHands", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
-
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 		SceneManager.LoadScene("Media3");
 	}
 	
 	public void To_ChooseTheCorrectWord()
 	{
-		CSVWriter.Instance.IncrementInterest("TestChildren", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
-
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 		SceneManager.LoadScene("ChooseTheCorrectWord");
 	}
 
 	public void To_IQTestMenu()
 	{
-		CSVWriter.Instance.IncrementInterest("IQTest", CSVWriter.Instance.dailyDataList.statisticalDatas[^1]);
-
 		SceneManager.LoadScene("IQTestMenu");
 		SoundManager.Instance.Play(SoundManager.SoundName.Click);
 	}
