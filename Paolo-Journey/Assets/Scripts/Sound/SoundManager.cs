@@ -36,11 +36,7 @@ public class SoundManager : Singleton<SoundManager>
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		// เช็คชื่อ Scene และเปลี่ยนเพลงตามต้องการ
-		if (scene.name == "TrueOrFalse")
-		{
-			audioSource.Stop();
-		}
+		
 		
 		if (scene.name == "IQTestMenu" || scene.name == "17+" || scene.name == "Result")
 		{
@@ -58,6 +54,19 @@ public class SoundManager : Singleton<SoundManager>
 				audioSource.Play();
 			}
 		}
+		// เช็คชื่อ Scene และเปลี่ยนเพลงตามต้องการ
+		else if (scene.name == "TrueOrFalse")
+		{
+			audioSource.Stop();
+		}
+		else if(scene.name == "Menu" || scene.name == "PaoloJourney" || scene.name == "Guide")
+		{
+			if (audioSource.clip != defaultMusic)
+			{
+				audioSource.clip = defaultMusic;
+				audioSource.Play();
+			}
+		}
 		else
 		{
 			if (audioSource.clip != defaultMusic)
@@ -66,6 +75,7 @@ public class SoundManager : Singleton<SoundManager>
 				audioSource.Play();
 			}
 		}
+		
 	}
 
 	private void OnDestroy()
