@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pertussisButton: {fileID: 1113295226}
   infoPanels: {fileID: 1012778911}
-  requiredScore: 10
+  requiredScore: 500
 --- !u!1 &6406978
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,7 +5205,7 @@ MonoBehaviour:
   finishCanvas: {fileID: 348579913}
   Canvas: {fileID: 1868793777}
   isGameOver: 0
-  timeLimit: 10
+  timeLimit: 30
 --- !u!4 &1898884753
 Transform:
   m_ObjectHideFlags: 0
