@@ -13,7 +13,6 @@ public class VirusMovement : MonoBehaviour
     private bool isExpanding = false; // สถานะว่ากำลังขยายตัวหรือไม่
     private CountdownTimer countdownTimer;  // ตัวแปรอ้างอิงไปที่ CountdownTimer
 
-
     void Start()
     {
         // กำหนดทิศทางเริ่มต้นแบบสุ่ม
@@ -39,13 +38,12 @@ public class VirusMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (countdownTimer != null && !countdownTimer.isGameOver && !isExpanding) // ป้องกันการกดซ้ำเมื่อกำลังขยายตัว
+        if (countdownTimer != null && !countdownTimer.isGameOver && !isExpanding) // เช็คสถานะภายในตัวไวรัสแต่ละตัว
         {
             isExpanding = true; // ตั้งสถานะว่ากำลังขยายตัว
             StartCoroutine(GrowAndShrinkEffect());
             ScoreManager.Instance.AddScore(1, transform.position); // เพิ่มคะแนน พร้อมส่งตำแหน่งไวรัส
             SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
-
         }
     }
 

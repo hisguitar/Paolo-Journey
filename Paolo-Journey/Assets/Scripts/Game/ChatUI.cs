@@ -61,6 +61,8 @@ public class ChatUI : MonoBehaviour
                 {
                     chatUI.SetActive(false);
                     miniGame.SetActive(true);
+                    audioSource.Stop();
+
                 }
             }
         }
