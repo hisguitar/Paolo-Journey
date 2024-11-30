@@ -1829,9 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0f2d20e01f05d439a382b0a1b6f1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 4b94935f7094ede48b47e15ba2f576aa, type: 2}
   player: {fileID: 124813046}
-  sceneName: PaoloJourney
 --- !u!4 &612200567
 Transform:
   m_ObjectHideFlags: 0
