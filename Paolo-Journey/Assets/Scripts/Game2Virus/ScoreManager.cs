@@ -1,6 +1,9 @@
+using System; // สำหรับ Guid
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -14,16 +17,54 @@ public class ScoreManager : MonoBehaviour
     public float spawnRate = 0.5f;
 
     public int score = 0;
-    private int comboCount = 0;
+    public int comboCount = 0;
     private float lastHitTime = 0f;
     public float comboTimeLimit = 0.3f; // เวลาที่สามารถต่อ Combo ได้
     public float bonusDisplayTime = 0.5f; // เวลาที่แสดงข้อความโบนัส
     public float scaleEffectDuration = 0.05f; // ระยะเวลาการขยายข้อความ
     private Coroutine bonusEffectCoroutine; // เก็บ Coroutine ที่กำลังรันอยู่
 
+    private const string GoogleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdU24xM8pQS5YKCri-HBEcN1Mf_tByA76aTfb2f_0Z948AABA/formResponse?pli=1";
+    private float currentTime = 30f;
+    public static string sessionId; // รหัส Session ไม่ซ้ำ
+    private bool hasDataBeenSent = false;
+    public IEnumerator UploadToGoogleSheets(int score, int comboCount)
+    {
+        WWWForm form = new WWWForm();
+        
+        // เพิ่ม Unique Identifier
+        form.AddField("entry.250114465", sessionId);
+        
+        // ระบุ Entry IDs ของแต่ละฟิลด์ใน Google Form
+        form.AddField("entry.95362451", score.ToString());      // ID สำหรับฟิลด์คะแนน
+        form.AddField("entry.1247192242", comboCount.ToString());    // ID สำหรับฟิลด์โบนัส
+
+        using (UnityWebRequest www = UnityWebRequest.Post(GoogleFormUrl, form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Data successfully submitted to Google Sheets.");
+            }
+            else
+            {
+                Debug.LogError($"Error submitting data: {www.error}");
+            }
+        }
+    }
     private void Awake()
     {
         Instance = this;
+        // สร้างรหัส Session ไม่ซ้ำในตอนเริ่มเกม
+        if (string.IsNullOrEmpty(Result.sessionId))
+        {
+            sessionId = Guid.NewGuid().ToString(); // ตัวอย่าง UUID
+        }
+        else
+        {
+            sessionId = Result.sessionId;
+        }
     }
 
     void Start()
@@ -31,7 +72,20 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
         bonusText.gameObject.SetActive(false); // ซ่อนข้อความ Bonus ในตอนเริ่ม
     }
-
+    
+    void Update()
+    {
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime; // ลดเวลา
+        }
+        else if (currentTime <= 0 && !hasDataBeenSent)
+        {
+            hasDataBeenSent = true; // ตั้งค่าสถานะว่าข้อมูลถูกส่งแล้ว
+            StartCoroutine(UploadToGoogleSheets(score, comboCount));
+        }
+    }
+    
     public void AddScore(int points, Vector3 virusPosition)
     {
         float currentTime = Time.time;
@@ -135,4 +189,6 @@ public class ScoreManager : MonoBehaviour
         spawnRate = 0.5f;
         virusSpawner.UpdateSpawnInterval(spawnRate); // รีเซ็ต spawnInterval
     }
+    
+    
 }

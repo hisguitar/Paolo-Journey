@@ -40,7 +40,7 @@ public class SoundManager : Singleton<SoundManager>
 	{
 		// เช็คชื่อ Scene และเปลี่ยนเพลงตามต้องการ
 		
-		if (scene.name == "IQTestMenu" || scene.name == "17+" || scene.name == "Result")
+		if (scene.name == "IQTestMenu" || scene.name == "17+" || scene.name == "Result" || scene.name == "6-12")
 		{
 			if (audioSource.clip != iqTestMusic)
 			{

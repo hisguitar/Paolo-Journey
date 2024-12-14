@@ -15,24 +15,27 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] public Slider ageSlider;
     [SerializeField] public TextMeshProUGUI ageSliderText;
     public Button sendAnsButtons; 
+    public Button sendQuickAnsButtons; 
     public TextMeshProUGUI timerText;
     public Canvas TimerCanvas;
+    public Canvas quickSendAnsCanvas;
+    public TextMeshProUGUI pageNumber;
     
 
     // Game Variables
     public static int age;
     public static int countScore;
     public int[] score;
-    public bool[] answered;
+    public static  bool[] answered;
     private int currentCanvasIndex = 0; 
     public static float timeCount = 0.0f;
 
     void Start()
     {
         InitializeGame();
+        age = (int)ageSlider.value;                 
         if (ageSlider != null && ageSliderText != null)
         {
-            age = 18;
             ageSlider.onValueChanged.AddListener((v) =>
             {
                 if (ageSlider.value == 70)
@@ -66,6 +69,7 @@ public class CanvasManager : MonoBehaviour
         }
         answered = new bool[canvases.Count - 2]; // กำหนดค่าเริ่มต้นให้กับตัวแปร answered
         sendAnsButtons.interactable = false;
+        sendQuickAnsButtons.interactable = false;
     }
 
     void UpdateTimer()
@@ -85,13 +89,24 @@ public class CanvasManager : MonoBehaviour
 
     void CheckAllAnswered()
     {
-        if (answered.All(a => a))
+        if (answered.Count(a => a) >= 15)
         {
+            sendQuickAnsButtons.interactable = true;
+            ColorBlock colorBlock = sendQuickAnsButtons.colors;
+            colorBlock.normalColor = new Color32(0, 109, 171, 255); 
+            sendQuickAnsButtons.colors = colorBlock;
+        }
+        else if (answered.All(a => a))
+        {
+            sendQuickAnsButtons.interactable = false;
+            sendQuickAnsButtons.gameObject.SetActive(false);
+            
             sendAnsButtons.interactable = true;
             ColorBlock colorBlock = sendAnsButtons.colors;
             colorBlock.normalColor = new Color32(0, 109, 171, 255); 
             sendAnsButtons.colors = colorBlock;
         }
+        
     }
 
     public void Skip()
@@ -114,6 +129,13 @@ public class CanvasManager : MonoBehaviour
         ChangeInteracButton(currentCanvasIndex-1);
         SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
         
+    }
+
+    public void Back()
+    {
+        SwitchCanvas(0);
+        ChangeInteracButton(currentCanvasIndex-1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton2);
     }
 
     public void TrueAns()
@@ -163,6 +185,11 @@ public class CanvasManager : MonoBehaviour
         canvases[currentCanvasIndex].SetActive(false);
         canvases[index].SetActive(true);
         currentCanvasIndex = index;
+        // อัปเดต pageNumber ให้แสดงหน้าในรูปแบบ "หน้า ปัจจุบัน/30"
+        if (pageNumber != null)
+        {
+            pageNumber.text = $"{currentCanvasIndex}/{pageButtons.Length}";
+        }
     }
 
     public void OnAnswerClick(int pageIndex)
@@ -230,8 +257,19 @@ public class CanvasManager : MonoBehaviour
 
     public void SendAnsButton()
     {
+        quickSendAnsCanvas.gameObject.SetActive(false);
         SwitchCanvas(canvases.Count-1); // เปลี่ยน currentCanvasIndex เป็นดัชนีของ Canvas หน้าสุดท้าย
         countScore = score.Count(s => s == 1);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
+    }
+    public void SendQuickAnsButton()
+    {
+        quickSendAnsCanvas.gameObject.SetActive(true);
+        SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
+    }
+    public void SendQuickAnsButtonBack()
+    {
+        quickSendAnsCanvas.gameObject.SetActive(false);
         SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
     }
 }

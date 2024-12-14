@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
-    public void Button2_6()
+    public void Button6_12()
     {
-        SceneManager.LoadScene("2-6");
+        SceneManager.LoadScene("6-12");
         SoundManager.Instance.Play(SoundManager.SoundName.ClickButton1);
 
     }
