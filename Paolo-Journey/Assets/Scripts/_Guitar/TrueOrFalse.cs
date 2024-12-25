@@ -21,7 +21,7 @@ public class TrueOrFalse : MonoBehaviour
 	
 	[Header("About Image")]
 	public Sprite[] questionImage;
-	public string[] imageNameThai = {"�ͻ����", "��Ǥ��", "�����", "ᵧ��", "຤͹", "�����", "ͧ��", "�ժ", "�ǹ�", "��ԡᴧ"};
+	public string[] imageNameThai = {"แอปเปิ้ล", "อโวคาโด", "เบียร์", "แตงโม", "เบคอน", "กล้วย", "องุ่น", "พีช", "ไวน์", "พริกแดง"};
     public string[] imageNameEnglish = { "Apple", "Avocado", "Beer", "Watermelon", "Bacon", "Banana", "Grape", "Peach", "Wine", "Pepper Red" };
     public bool[] isShouldEat;
 	
@@ -96,14 +96,14 @@ public class TrueOrFalse : MonoBehaviour
 			score += 10;
 			correctAnswer.image.color = new Color32(113, 169, 0, 210);
 			correctAnswerText.color = new Color32(171, 255, 0, 255);
-			correctAnswerText.text = "�١��ͧ�Ф�Ѻ!\n+10 ��ṹ";
+			correctAnswerText.text = "ถูกต้องนะครับ!\n+10 คะแนน";
 		}
 		else
 		{
 			GSoundManager.Instance.Play(GSoundManager.GSoundName.Wrong);
 			correctAnswer.image.color = new Color32(168, 2, 0, 210);
 			correctAnswerText.color = new Color32(255, 0, 0, 255);
-			correctAnswerText.text = "�ͺ�Դ ��������!\n������ṹ��";
+			correctAnswerText.text = "ตอบผิด เอาใหม่ๆ!\nไม่ได้คะแนนนะ";
 			UpdateIncorrectFoods(currentQuestion);
 		}
 	}
@@ -164,7 +164,7 @@ public class TrueOrFalse : MonoBehaviour
 			timer.StopTimer();
 			correctAnswer.image.color = new Color32(0, 163, 255, 210);
 			correctAnswerText.color = Color.white;
-			correctAnswerText.text = $"�س�ͺ�Ӷ���������!.\n�س���Ѻ��ṹ������ {score}/{questionImage.Length * 10} ��ṹ";
+			correctAnswerText.text = $"คุณตอบคำถามหมดแล้ว!.\nคุณได้รับคะแนนทั้งหมด {score}/{questionImage.Length * 10} คะแนน";
 			googleFormLogger.SubmitForm(score / 10, incorrectFoods, viewDescription, tapCount, timer.GetFormattedTime());
 			
 			isEnd = true;
@@ -183,8 +183,8 @@ public class TrueOrFalse : MonoBehaviour
 	// Used in ChangeQuestion()
 	private void UpdateScore()
 	{
-		finishScoreText.text = "�������� " + currentQuestion + "/" + questionImage.Length + " ���\n" +
-		"�س���Ѻ " + score + "/" + questionImage.Length * 10 + " ��ṹ";
+		finishScoreText.text = "เสร็จแล้ว " + currentQuestion + "/" + questionImage.Length + " ข้อ\n" +
+		"คุณได้รับ " + score + "/" + questionImage.Length * 10 + " คะแนน";
 		StartCoroutine(PopupText(1.0f, 1.15f, 0.25f));
 	}
 	
